@@ -1,0 +1,180 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Award, Hotel, Star, ChefHat, Users, Globe } from "lucide-react";
+
+interface AboutProps {
+  image?: string;
+}
+
+const highlights = [
+  { icon: Award, text: "IHM Jaipur Graduate" },
+  { icon: Hotel, text: "The Oberoi New Delhi" },
+  { icon: Star, text: "Michelin Star Training" },
+  { icon: ChefHat, text: "Head Chef Experience" },
+  { icon: Users, text: "Team Leadership" },
+  { icon: Globe, text: "International Guests" },
+];
+
+const experience = [
+  {
+    role: "Worked at",
+    company: "The Oberoi New Delhi",
+    description: "Luxury hospitality operations & fine dining"
+  },
+  {
+    role: "Trained under",
+    company: "Chef Alfred Prasad (Michelin Star)",
+    description: "International culinary excellence"
+  },
+  {
+    role: "Sous Chef",
+    company: "Kalwar Castle – Rosakue Group",
+    description: "Heritage hospitality & banquet management"
+  },
+  {
+    role: "Head Chef",
+    company: "Mundota Fort & Palace Jaipur",
+    description: "Complete kitchen leadership & operations"
+  },
+];
+
+export function About({ image = "/images/herologo/ravindraimage.png" }: AboutProps): import("react/jsx-runtime").JSX.Element {
+  return (
+    <section id="about" className="relative overflow-hidden bg-background py-24">
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute right-0 top-20 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -left-40 bottom-20 h-[400px] w-[400px] rounded-full bg-accent/20 blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          {/* Left - Image & Decorations */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+<div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={image}
+                  alt="Founder portrait in hospitality setting"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating Experience Card */}
+            <motion.div
+              className="glass absolute -bottom-6 -right-6 rounded-2xl p-5 shadow-xl md:bottom-10 md:right-[-40px]"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                  <Award className="h-7 w-7 text-white" />
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-foreground">10+ Years</p>
+                  <p className="text-sm text-muted-foreground">Industry Experience</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating badge */}
+            <motion.div
+              className="glass absolute -top-4 left-4 rounded-xl px-4 py-2 shadow-lg"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+            >
+              <span className="text-sm font-medium text-foreground">IHM Jaipur Graduate</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Right - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div>
+              <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                About The Founder
+              </span>
+              <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+                <span className="text-balance">Built By Hospitality Professionals With Real Industry Experience</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+              <p className="text-pretty">
+                <strong className="text-foreground">Chef Ravindra Shekhawat</strong>, founder of Shree Shyam Kitchen Consultancy, 
+                brings over a decade of hands-on experience in luxury hospitality operations, 
+                culinary excellence, and restaurant management.
+              </p>
+              <p className="text-pretty">
+                An <strong className="text-foreground">IHM Jaipur graduate</strong> with prestigious experience at 
+                <strong className="text-foreground"> The Oberoi New Delhi</strong> and training under 
+                <strong className="text-foreground"> Michelin Star Chef Alfred Prasad</strong>, he has mastered 
+                the art of creating exceptional dining experiences.
+              </p>
+              <p className="text-pretty">
+                From serving as <strong className="text-foreground">Head Chef at Mundota Fort & Palace</strong> to 
+                managing international events including <strong className="text-foreground">French Ambassador catering</strong>, 
+                his expertise spans menu engineering, kitchen planning, team leadership, and operational excellence.
+              </p>
+            </div>
+
+            {/* Experience Timeline */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-foreground">Professional Journey</h3>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {experience.map((exp, index) => (
+                  <motion.div
+                    key={exp.company}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="rounded-xl border border-border/50 bg-card/50 p-4 transition-all hover:border-primary/30 hover:shadow-md"
+                  >
+                    <p className="text-xs font-medium uppercase tracking-wide text-primary">{exp.role}</p>
+                    <p className="font-semibold text-foreground">{exp.company}</p>
+                    <p className="text-sm text-muted-foreground">{exp.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Highlight Badges */}
+            <div className="flex flex-wrap gap-3">
+              {highlights.map((item, index) => (
+                <motion.div
+                  key={item.text}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="flex items-center gap-2 rounded-full border border-border/50 bg-muted/50 px-4 py-2"
+                >
+                  <item.icon className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-medium text-foreground">{item.text}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
