@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
@@ -64,8 +65,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
-        {children}
-              </body>
+  {children}
+  <Analytics />
+</body>
     </html>
   )
 }
