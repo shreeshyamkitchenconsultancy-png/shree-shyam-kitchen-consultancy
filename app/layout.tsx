@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   keywords: 'restaurant consultancy, restaurant consultant Jaipur, kitchen design consultancy, cloud kitchen setup, cafe consultancy, menu engineering, restaurant operations consultancy, hospitality consultancy India',
   authors: [{ name: 'Shree Shyam Kitchen Consultancy' }],
   creator: 'Shree Shyam Kitchen Consultancy',
+
+  verification: {
+    google: 'Y3EkA-NueLZX4l7i4UZRINQ_7LQKFIGWtaWgAFX54t0',
+  },
+
   openGraph: {
     title: 'Shree Shyam Kitchen Consultancy | Transform Your Restaurant Ideas Into Profitable Businesses',
     description: 'End-to-end restaurant consultancy services including kitchen design, menu engineering, staff training, and operations management.',
