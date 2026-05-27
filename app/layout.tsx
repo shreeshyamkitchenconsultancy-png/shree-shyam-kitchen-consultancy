@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
@@ -74,6 +75,7 @@ export default function RootLayout({
   {children}
   <Analytics />
   <SpeedInsights />
+  <GoogleAnalytics gaId="G-WKEHB9WNJK" />
 </body>
     </html>
   )
