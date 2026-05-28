@@ -24,7 +24,7 @@ const projects: Project[] = [
     name: "The Bamboo Nation",
     category: "Restaurant",
     cuisine: "Multi-Cuisine",
-    image: "/images/portfolio/bamboonation.jpg",
+    image: "/images/portfolio/bamboonation2.png",
     services: [
       "Complete restaurant concept development",
       "Kitchen planning & workflow design",
@@ -198,7 +198,7 @@ const projects: Project[] = [
     name: "The Bamboo Nation 2.0",
     category: "Restaurant",
     cuisine: "Multi-Cuisine",
-    image: "/images/portfolio/bamboonation2.png",
+    image: "/images/portfolio/bamboonation.jpg",
     services: ["Expansion Consulting", "Operations Optimization", "Menu Engineering", "Staff Training",],
     description: "Successful expansion of the original Bamboo Nation concept.",
     featured: true,
@@ -297,7 +297,7 @@ export function Portfolio() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
                   <Image
-                    src={project.image ?? "/images/thebamboonation.jpg"}
+                    src={project.image ?? "/images/portfolio/bamboonation2.png"}
                     alt={project.name}
                     fill
                     className="object-cover"
