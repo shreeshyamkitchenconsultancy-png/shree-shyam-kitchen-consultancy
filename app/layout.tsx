@@ -75,7 +75,25 @@ export default function RootLayout({
   {children}
   <Analytics />
   <SpeedInsights />
-  <GoogleAnalytics gaId="G-WKEHB9WNJK" />
+ <GoogleAnalytics gaId="G-WKEHB9WNJK" />
+ <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=AW-18058702907"
+></script>
+
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      gtag('js', new Date());
+
+      gtag('config', 'G-WKEHB9WNJK');
+      gtag('config', 'AW-18058702907');
+    `,
+  }}
+/>
 </body>
     </html>
   )
