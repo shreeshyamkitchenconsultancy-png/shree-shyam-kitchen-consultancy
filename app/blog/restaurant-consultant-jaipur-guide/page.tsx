@@ -77,20 +77,24 @@ export default function ArticlePage() {
     to operational and financial mistakes rather than food quality.
   </p>
 
-  <p>Common reasons for restaurant failure include:</p>
+ <p className="font-semibold text-lg">
+  Common reasons for restaurant failure include:
+</p>
 
-  <ul>
-    <li>Poor location selection</li>
-    <li>Improper kitchen planning</li>
-    <li>Overspending on interiors</li>
-    <li>Weak menu engineering</li>
-    <li>Lack of inventory controls</li>
-    <li>Inadequate staff training</li>
-    <li>Insufficient working capital</li>
-    <li>Poor marketing execution</li>
-  </ul>
+<ul className="space-y-3 mt-4">
+  <li>✓ Poor location selection</li>
+  <li>✓ Improper kitchen planning</li>
+  <li>✓ Overspending on interiors</li>
+  <li>✓ Weak menu engineering</li>
+  <li>✓ Lack of inventory controls</li>
+  <li>✓ Inadequate staff training</li>
+  <li>✓ Insufficient working capital</li>
+  <li>✓ Poor marketing execution</li>
+</ul>
+
 
   <p>
+    
     Successful restaurant businesses focus on operational efficiency,
     profitability, customer retention and system-driven management from the
     beginning.
