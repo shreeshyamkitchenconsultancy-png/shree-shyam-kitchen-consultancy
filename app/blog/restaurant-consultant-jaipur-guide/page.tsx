@@ -81,7 +81,7 @@ export default function ArticlePage() {
   Common reasons for restaurant failure include:
 </p>
 
-<ul className="space-y-3 mt-4">
+<ul className="space-y-3 mt-4 mb-8">
   <li>✓ Poor location selection</li>
   <li>✓ Improper kitchen planning</li>
   <li>✓ Overspending on interiors</li>
@@ -91,11 +91,12 @@ export default function ArticlePage() {
   <li>✓ Insufficient working capital</li>
   <li>✓ Poor marketing execution</li>
 </ul>
-  <p>
-    Successful restaurant businesses focus on operational efficiency,
-    profitability, customer retention and system-driven management from the
-    beginning.
-  </p>
+
+<p>
+  Successful restaurant businesses focus on operational efficiency,
+  profitability, customer retention and system-driven management from
+  the beginning.
+</p>
 
   <div className="rounded-xl border p-6 my-8 bg-muted/20">
     <h3 className="font-bold mb-3">Consultant's Insight</h3>
