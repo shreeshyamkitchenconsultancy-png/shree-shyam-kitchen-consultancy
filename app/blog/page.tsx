@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 <div className="rounded-xl border overflow-hidden shadow-sm">
   <img
     src="/images/blog/blogimage1.png"
