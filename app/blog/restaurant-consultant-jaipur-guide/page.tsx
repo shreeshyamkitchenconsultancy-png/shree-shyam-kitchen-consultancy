@@ -52,16 +52,13 @@ export default function ArticlePage() {
   <p>
     Opening a restaurant in Jaipur can be a highly profitable business
     opportunity, but success depends on much more than good food and attractive
-    interiors. Restaurant owners must carefully plan their concept, location,
-    kitchen design, menu engineering, staffing, inventory systems and marketing
-    strategy before launch.
+    interiors.
   </p>
 
   <p>
     Many restaurants struggle within the first two years due to poor planning,
     excessive capital expenditure, weak operational systems and inadequate cost
-    control measures. A professionally planned restaurant has a significantly
-    higher chance of achieving operational efficiency and long-term profitability.
+    control measures.
   </p>
 
   <p>
@@ -71,7 +68,46 @@ export default function ArticlePage() {
   </p>
 </section>
 
-      </div>
-    </main>
+<section className="prose prose-lg max-w-none mt-12">
+  <h2>Why Most Restaurants Fail Within the First Two Years</h2>
+
+  <p>
+    One of the biggest misconceptions among first-time restaurant owners is
+    that good food alone guarantees success. In reality, restaurants fail due
+    to operational and financial mistakes rather than food quality.
+  </p>
+
+  <p>Common reasons for restaurant failure include:</p>
+
+  <ul>
+    <li>Poor location selection</li>
+    <li>Improper kitchen planning</li>
+    <li>Overspending on interiors</li>
+    <li>Weak menu engineering</li>
+    <li>Lack of inventory controls</li>
+    <li>Inadequate staff training</li>
+    <li>Insufficient working capital</li>
+    <li>Poor marketing execution</li>
+  </ul>
+
+  <p>
+    Successful restaurant businesses focus on operational efficiency,
+    profitability, customer retention and system-driven management from the
+    beginning.
+  </p>
+
+  <div className="rounded-xl border p-6 my-8 bg-muted/20">
+    <h3 className="font-bold mb-3">Consultant's Insight</h3>
+
+    <p>
+      Many restaurant owners allocate excessive budgets to interiors while
+      underinvesting in kitchen infrastructure, staff training and marketing.
+      This often creates cash-flow pressure during the critical launch period.
+    </p>
+  </div>
+</section>
+
+</div>
+</main>
   );
 }
