@@ -69,7 +69,7 @@ export default function ArticlePage() {
 </section>
 
 <section className="prose prose-lg max-w-none mt-12">
-  <h2>Why Most Restaurants Fail Within the First Two Years</h2>
+  <h2>Why Most Restaurants Fail Within the First Two Years in Jaipur</h2>
 
   <p>
     One of the biggest misconceptions among first-time restaurant owners is
