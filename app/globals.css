@@ -81,11 +81,12 @@
 
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: #e5e5e5;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: #fff6e2;
+    color: #202931;
   }
 }
 
