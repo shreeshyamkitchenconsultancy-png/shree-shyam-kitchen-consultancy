@@ -98,13 +98,54 @@ export default function ArticlePage() {
   the beginning.
 </p>
 
-  <div className="rounded-xl border p-6 my-8 bg-muted/20">
+    <div className="rounded-xl border p-6 my-8 bg-muted/20">
     <h3 className="font-bold mb-3">Consultant's Insight</h3>
 
     <p>
       Many restaurant owners allocate excessive budgets to interiors while
       underinvesting in kitchen infrastructure, staff training and marketing.
       This often creates cash-flow pressure during the critical launch period.
+    </p>
+  </div>
+</section>
+
+<section className="prose prose-lg max-w-none mt-12">
+  <h2>Choosing the Right Location for Your Restaurant in Jaipur</h2>
+
+  <p>
+    Location is one of the most important factors determining the success of a
+    restaurant. Even an excellent concept can struggle if it is launched in the
+    wrong area with insufficient footfall or an unsuitable customer demographic.
+  </p>
+
+  <p className="font-semibold text-lg">
+    Before finalizing a location, restaurant owners should evaluate:
+  </p>
+
+  <ul className="space-y-3 mt-4 mb-8">
+    <li>✓ Target customer profile</li>
+    <li>✓ Footfall and visibility</li>
+    <li>✓ Parking availability</li>
+    <li>✓ Competition analysis</li>
+    <li>✓ Rental costs</li>
+    <li>✓ Delivery potential</li>
+    <li>✓ Future development prospects</li>
+  </ul>
+
+  <p>
+    In Jaipur, areas such as Malviya Nagar, Vaishali Nagar, Mansarovar,
+    Jagatpura, Raja Park and C-Scheme attract different customer segments.
+    Selecting a location that aligns with your concept is critical for
+    long-term profitability.
+  </p>
+
+  <div className="rounded-xl border p-6 my-8 bg-muted/20">
+    <h3 className="font-bold mb-3">Consultant's Insight</h3>
+
+    <p>
+      Many entrepreneurs choose locations based on low rent rather than
+      customer demand. A cheaper location often results in lower sales and
+      higher marketing costs.
     </p>
   </div>
 </section>
