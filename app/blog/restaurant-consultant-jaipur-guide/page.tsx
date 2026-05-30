@@ -12,36 +12,73 @@ export const metadata = {
 export default function ArticlePage() {
   return (
     <main className="container mx-auto px-4 py-24">
+  <article className="max-w-4xl mx-auto">
       <BlogImage
   src="/images/blog/blogimage1.png"
   alt="Restaurant Consultant in Jaipur"
 />
 
-      <div className="max-w-4xl mx-auto">
-        <span className="text-sm font-medium">
-          Restaurant Consultancy
-        </span>
+              <header className="mb-6">
+  <span className="text-sm font-medium">
+    Restaurant Consultancy
+  </span>
 
-        <h1 className="text-5xl font-bold mt-4 mb-6">
-          Restaurant Consultant in Jaipur:
-          Complete Guide to Opening a Profitable Restaurant in 2026
-        </h1>
+  <h1 className="text-5xl font-bold mt-4 mb-6">
+    Restaurant Consultant in Jaipur:
+    Complete Guide to Opening a Profitable Restaurant in 2026
+  </h1>
 
-        <p className="text-muted-foreground text-lg mb-8">
-          By Chef Ravindra Shekhawat • Shree Shyam Kitchen Consultancy
-        </p>
+  <p className="text-muted-foreground text-lg mb-8">
+    By Chef Ravindra Shekhawat • Shree Shyam Kitchen Consultancy
+  </p>
+</header>
 
-         <div className="rounded-xl border p-6 mb-10">
+      <div className="rounded-xl border p-6 mb-10 bg-muted/20">
   <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
-  <ul className="space-y-2">
-  <li><a href="#why-restaurants-fail" className="hover:underline">1. Why Restaurants Fail</a></li>
-  <li><a href="#choosing-location" className="hover:underline">2. Choosing the Right Location</a></li>
-  <li><a href="#kitchen-design" className="hover:underline">3. Commercial Kitchen Design</a></li>
-  <li><a href="#menu-engineering" className="hover:underline">4. Menu Engineering</a></li>
-  <li><a href="#staff-training" className="hover:underline">5. Staff Training</a></li>
-  <li><a href="#restaurant-marketing" className="hover:underline">6. Restaurant Marketing</a></li>
-  <li><a href="#consultant-help" className="hover:underline">7. How a Restaurant Consultant Helps</a></li>
-</ul>
+
+  <ul className="space-y-2 text-sm">
+    <li>
+      <a href="#why-restaurants-fail" className="hover:underline focus:underline">
+        1. Why Restaurants Fail
+      </a>
+    </li>
+
+    <li>
+      <a href="#choosing-location" className="hover:underline focus:underline">
+        2. Choosing the Right Location
+      </a>
+    </li>
+
+    <li>
+      <a href="#kitchen-design" className="hover:underline focus:underline">
+        3. Commercial Kitchen Design
+      </a>
+    </li>
+
+    <li>
+      <a href="#menu-engineering" className="hover:underline focus:underline">
+        4. Menu Engineering
+      </a>
+    </li>
+
+    <li>
+      <a href="#staff-training" className="hover:underline focus:underline">
+        5. Staff Training
+      </a>
+    </li>
+
+    <li>
+      <a href="#restaurant-marketing" className="hover:underline focus:underline">
+        6. Restaurant Marketing
+      </a>
+    </li>
+
+    <li>
+      <a href="#consultant-help" className="hover:underline focus:underline">
+        7. How a Restaurant Consultant Helps
+      </a>
+    </li>
+  </ul>
 </div>
 
         <section className="prose prose-lg max-w-none">
@@ -416,8 +453,7 @@ export default function ArticlePage() {
 {/* RELATED RESOURCES END */}
 
 <CTABox />
-
-</div>
+  </article>
 </main>
   );
 }
