@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { BlogImage } from "@/components/blog/BlogImage";
+import { InfoBox } from "@/components/blog/InfoBox";
+import { CTABox } from "@/components/blog/sections/CTABox";
 export const metadata = {
   title:
     "Restaurant Consultant in Jaipur | Complete Guide to Opening a Profitable Restaurant in 2026",
@@ -8,11 +12,10 @@ export const metadata = {
 export default function ArticlePage() {
   return (
     <main className="container mx-auto px-4 py-24">
-      <img
-        src="/images/blog/blogimage1.png"
-        alt="Restaurant Consultant in Jaipur"
-        className="w-full h-[450px] object-cover rounded-xl mb-10"
-      />
+      <BlogImage
+  src="/images/blog/blogimage1.png"
+  alt="Restaurant Consultant in Jaipur"
+/>
 
       <div className="max-w-4xl mx-auto">
         <span className="text-sm font-medium">
@@ -28,23 +31,18 @@ export default function ArticlePage() {
           By Chef Ravindra Shekhawat • Shree Shyam Kitchen Consultancy
         </p>
 
-         {/* TABLE OF CONTENTS START */}
-        <div className="rounded-xl border p-6 mb-10">
-          <h2 className="text-2xl font-bold mb-4">
-            Table of Contents
-          </h2>
-
-          <ul className="space-y-2">
-            <li>1. Why Restaurants Fail</li>
-            <li>2. Choosing the Right Location</li>
-            <li>3. Commercial Kitchen Design</li>
-            <li>4. Menu Engineering</li>
-            <li>5. Staff Training</li>
-            <li>6. Restaurant Marketing</li>
-            <li>7. How a Restaurant Consultant Helps</li>
-          </ul>
-        </div>
-        {/* TABLE OF CONTENTS END */}
+         <div className="rounded-xl border p-6 mb-10">
+  <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
+  <ul className="space-y-2">
+  <li><a href="#why-restaurants-fail" className="hover:underline">1. Why Restaurants Fail</a></li>
+  <li><a href="#choosing-location" className="hover:underline">2. Choosing the Right Location</a></li>
+  <li><a href="#kitchen-design" className="hover:underline">3. Commercial Kitchen Design</a></li>
+  <li><a href="#menu-engineering" className="hover:underline">4. Menu Engineering</a></li>
+  <li><a href="#staff-training" className="hover:underline">5. Staff Training</a></li>
+  <li><a href="#restaurant-marketing" className="hover:underline">6. Restaurant Marketing</a></li>
+  <li><a href="#consultant-help" className="hover:underline">7. How a Restaurant Consultant Helps</a></li>
+</ul>
+</div>
 
         <section className="prose prose-lg max-w-none">
   <h2>Introduction</h2>
@@ -68,7 +66,11 @@ export default function ArticlePage() {
   </p>
 </section>
 
-<section className="prose prose-lg max-w-none mt-12">
+<BlogImage
+  src="/images/blog/restaurant-planning.jpg"
+  alt="Restaurant planning and business strategy"
+/>
+<section id="why-restaurants-fail" className="prose prose-lg max-w-none mt-12">
   <h2>Why Most Restaurants Fail Within the First Two Years in Jaipur</h2>
 
   <p>
@@ -98,18 +100,18 @@ export default function ArticlePage() {
   the beginning.
 </p>
 
-    <div className="rounded-xl border p-6 my-8 bg-muted/20">
-    <h3 className="font-bold mb-3">Consultant's Insight</h3>
-
-    <p>
-      Many restaurant owners allocate excessive budgets to interiors while
-      underinvesting in kitchen infrastructure, staff training and marketing.
-      This often creates cash-flow pressure during the critical launch period.
-    </p>
-  </div>
+    <InfoBox title="Consultant's Insight">
+  Many restaurant owners allocate excessive budgets to interiors while
+  underinvesting in kitchen infrastructure, staff training and marketing.
+  This often creates cash-flow pressure during the critical launch period.
+</InfoBox>
 </section>
 
-<section className="prose prose-lg max-w-none mt-12">
+<BlogImage
+  src="/images/blog/commercial-kitchen.jpg"
+  alt="Commercial kitchen layout and equipment"
+/>
+<section id="choosing-location" className="prose prose-lg max-w-none mt-12">
   <h2>Choosing the Right Location for Your Restaurant in Jaipur</h2>
 
   <p>
@@ -139,17 +141,12 @@ export default function ArticlePage() {
     long-term profitability.
   </p>
 
-  <div className="rounded-xl border p-6 my-8 bg-muted/20">
-    <h3 className="font-bold mb-3">Consultant's Insight</h3>
-
-    <p>
-      Many entrepreneurs choose locations based on low rent rather than
-      customer demand. A cheaper location often results in lower sales and
-      higher marketing costs.
-    </p>
-  </div>
+  <InfoBox title="Consultant's Insight">
+  Many entrepreneurs choose locations based on low rent rather than customer demand. 
+  A cheaper location often results in lower sales and higher marketing costs.
+</InfoBox>
 </section>
-<section className="prose prose-lg max-w-none mt-12">
+<section id="kitchen-design" className="prose prose-lg max-w-none mt-12">
   <h2>Commercial Kitchen Design: The Foundation of Restaurant Efficiency</h2>
 
   <p>
@@ -186,16 +183,239 @@ export default function ArticlePage() {
     while minimizing unnecessary operational costs.
   </p>
 
+  <InfoBox title="Consultant's Insight">
+  In many restaurant projects, operational bottlenecks occur because kitchen layouts are finalized after interior planning. 
+  The kitchen should be planned first, as it directly affects service speed, food quality and profitability.
+</InfoBox>
+</section>
+<section id="menu-engineering" className="prose prose-lg max-w-none mt-12">
+  <h2>Menu Engineering: Maximizing Profitability Through Smart Menu Design</h2>
+
+  <p>
+    A restaurant menu is more than a list of dishes. It is one of the most
+    powerful tools for controlling food costs, improving profitability and
+    influencing customer purchasing decisions.
+  </p>
+
+  <p>
+    Effective menu engineering combines pricing strategy, food cost analysis,
+    contribution margins and customer psychology to create a menu that drives
+    higher revenue and profit.
+  </p>
+
+  <p className="font-semibold text-lg">
+    Key elements of menu engineering include:
+  </p>
+
+  <ul className="space-y-3 mt-4 mb-8">
+    <li>✓ Food cost analysis</li>
+    <li>✓ Selling price optimization</li>
+    <li>✓ Contribution margin calculation</li>
+    <li>✓ Menu category planning</li>
+    <li>✓ High-profit item placement</li>
+    <li>✓ Portion standardization</li>
+    <li>✓ Recipe costing</li>
+    <li>✓ Menu simplification</li>
+  </ul>
+
+  <p>
+    A properly engineered menu helps restaurants increase average order value,
+    improve kitchen efficiency and reduce unnecessary inventory requirements.
+  </p>
+
+  <InfoBox title="Consultant's Insight">
+  Many restaurants carry too many low-selling dishes. Reducing menu complexity often improves consistency, speeds up service and increases profitability.
+</InfoBox>
+</section>
+
+<section id="staff-training" className="prose prose-lg max-w-none mt-12">
+  <h2>Staff Training and SOP Development</h2>
+
+  <p>
+    Even the best restaurant concept can struggle if the staff is not properly
+    trained. Service quality, food consistency, hygiene standards and customer
+    experience depend heavily on employee performance.
+  </p>
+
+  <p>
+    Restaurants should establish Standard Operating Procedures (SOPs) for both
+    kitchen and service operations to ensure consistency across all shifts.
+  </p>
+
+  <p className="font-semibold text-lg">
+    Essential training areas include:
+  </p>
+
+  <ul className="space-y-3 mt-4 mb-8">
+    <li>✓ Food production standards</li>
+    <li>✓ Service etiquette</li>
+    <li>✓ Customer handling</li>
+    <li>✓ Hygiene and sanitation</li>
+    <li>✓ Inventory management</li>
+    <li>✓ Billing and POS operations</li>
+    <li>✓ Upselling techniques</li>
+    <li>✓ Complaint resolution</li>
+  </ul>
+
+  <p>
+    Well-trained staff improves guest satisfaction, reduces operational errors
+    and helps build a stronger restaurant reputation.
+  </p>
+
+  <InfoBox title="Consultant's Insight">
+  Most operational issues are not caused by employees but by the absence of
+  clear systems and training procedures. SOP-driven restaurants achieve
+  better consistency and lower staff dependency.
+</InfoBox>
+</section>
+<BlogImage
+  src="/images/blog/restaurant-marketing.jpg"
+  alt="Restaurant marketing strategies in Jaipur"
+/>
+<section id="restaurant-marketing" className="prose prose-lg max-w-none mt-12">
+  <h2>Restaurant Marketing and Customer Acquisition</h2>
+
+  <p>
+    Many restaurant owners assume that customers will automatically discover
+    their business after launch. In reality, consistent marketing is essential
+    for generating awareness, acquiring customers and building repeat business.
+  </p>
+
+  <p>
+    Modern restaurant marketing requires a combination of online visibility,
+    social media presence, customer engagement and reputation management.
+  </p>
+
+  <p className="font-semibold text-lg">
+    Key marketing channels include:
+  </p>
+
+  <ul className="space-y-3 mt-4 mb-8">
+    <li>✓ Google Business Profile optimization</li>
+    <li>✓ Instagram and Facebook marketing</li>
+    <li>✓ Food photography and videography</li>
+    <li>✓ Influencer collaborations</li>
+    <li>✓ Swiggy and Zomato optimization</li>
+    <li>✓ Customer review management</li>
+    <li>✓ Local SEO and website optimization</li>
+    <li>✓ Loyalty and referral programs</li>
+  </ul>
+
+  <p>
+    Restaurants that consistently invest in marketing generally achieve higher
+    customer retention, stronger brand recognition and better long-term revenue
+    growth.
+  </p>
+
   <div className="rounded-xl border p-6 my-8 bg-muted/20">
     <h3 className="font-bold mb-3">Consultant's Insight</h3>
 
     <p>
-      In many restaurant projects, operational bottlenecks occur because kitchen
-      layouts are finalized after interior planning. The kitchen should be planned
-      first, as it directly affects service speed, food quality and profitability.
+      Marketing should begin before the restaurant opens. Pre-launch campaigns,
+      professional photography and local awareness activities can significantly
+      improve launch performance.
     </p>
   </div>
 </section>
+
+<section id="consultant-help" className="prose prose-lg max-w-none mt-12">
+  <h2>How a Restaurant Consultant Helps Reduce Risk and Improve Profitability</h2>
+
+  <p>
+    Opening a restaurant involves numerous decisions related to concept
+    development, budgeting, kitchen planning, menu design, staffing and
+    marketing. Mistakes during the planning stage often become expensive to
+    correct after launch.
+  </p>
+
+  <p>
+    A professional restaurant consultant helps streamline the process by
+    providing industry expertise, operational systems and practical guidance
+    throughout the project lifecycle.
+  </p>
+
+  <p className="font-semibold text-lg">
+    Restaurant consultancy services typically include:
+  </p>
+
+  <ul className="space-y-3 mt-4 mb-8">
+    <li>✓ Restaurant concept development</li>
+    <li>✓ Commercial kitchen planning</li>
+    <li>✓ Menu engineering and recipe costing</li>
+    <li>✓ Vendor and inventory systems</li>
+    <li>✓ SOP development and staff training</li>
+    <li>✓ Restaurant launch support</li>
+    <li>✓ Marketing strategy and brand positioning</li>
+    <li>✓ Operational audits and profitability improvement</li>
+  </ul>
+
+  <p>
+    Professional guidance helps reduce costly mistakes and allows restaurant
+    owners to focus on building a sustainable and profitable business.
+  </p>
+</section>
+<section className="prose prose-lg max-w-none mt-12">
+  <h2>Conclusion</h2>
+
+  <p>
+    Most restaurant failures in Jaipur are not caused by food quality but by
+    poor planning in location selection, kitchen design, menu engineering, and
+    cost control.
+  </p>
+
+  <p>
+    A profitable restaurant is built on systems, not improvisation. Without
+    structured SOPs, proper kitchen workflow, and disciplined menu costing,
+    even high-revenue outlets struggle to sustain margins.
+  </p>
+
+  <p>
+    Execution in the first phase determines long-term survival more than branding or interiors.
+  </p>
+</section>
+
+{/* RELATED RESOURCES START */}
+
+<section className="mt-12">
+  <h2 className="text-3xl font-bold mb-6">
+    Related Resources
+  </h2>
+
+  <div className="space-y-4">
+
+    <Link
+  href="/services"
+  className="block rounded-xl border p-6 hover:bg-muted/20"
+>
+  <h3 className="font-semibold">
+    Explore our complete Restaurant Consultancy Services
+  </h3>
+</Link>
+
+    <Link
+  href="/about"
+      className="block rounded-xl border p-6 hover:bg-muted/20"
+    >
+      <h3 className="font-semibold">
+        Learn more about Shree Shyam Kitchen Consultancy and our experience
+      </h3>
+    </Link>
+
+    <Link
+  href="/contact"
+      className="block rounded-xl border p-6 hover:bg-muted/20"
+    >
+      <h3 className="font-semibold">
+        Contact our restaurant consultants for a project discussion
+      </h3>
+    </Link>
+
+  </div>
+</section>  
+
+{/* RELATED RESOURCES END */}
+
+<CTABox />
 
 </div>
 </main>

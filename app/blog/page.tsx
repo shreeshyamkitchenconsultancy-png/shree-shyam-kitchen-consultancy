@@ -1,3 +1,4 @@
+import { CTA } from "@/components/sections/cta";
 import Link from "next/link";
 
 export default function BlogPage() {
@@ -41,6 +42,11 @@ export default function BlogPage() {
             Read Article →
           </Link>
         </div>
+      </div>
+
+            {/* CTA SECTION */}
+      <div className="mt-20">
+        <CTA />
       </div>
     </main>
   );
