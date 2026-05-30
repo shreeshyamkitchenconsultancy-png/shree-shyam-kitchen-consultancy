@@ -1,59 +1,82 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
+/* =========================
+   ROOT THEME VARIABLES
+========================= */
 :root {
-  /* Warm Hospitality Color Palette */
-  --background: oklch(0.98 0.01 85);
-  --foreground: oklch(0.22 0.02 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 240);
-  --primary: oklch(0.68 0.18 45);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.55 0.2 35);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.95 0.02 85);
-  --muted-foreground: oklch(0.45 0.02 240);
-  --accent: oklch(0.85 0.08 60);
-  --accent-foreground: oklch(0.22 0.02 240);
-  --destructive: oklch(0.55 0.2 35);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.92 0.01 85);
-  --ring: oklch(0.68 0.18 45);
+  --background: #fff6e2;
+  --foreground: #202931;
+
+  --card: #ffffff;
+  --card-foreground: #202931;
+
+  --popover: #ffffff;
+  --popover-foreground: #202931;
+
+  --primary: #fc7f2b;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e94e1b;
+  --secondary-foreground: #ffffff;
+
+  --muted: #f5f2ea;
+  --muted-foreground: #6b7280;
+
+  --accent: #ffcba4;
+  --accent-foreground: #202931;
+
+  --destructive: #e94e1b;
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e7eb;
+  --input: #f3f4f6;
+  --ring: #fc7f2b;
+
   --radius: 0.75rem;
 }
 
+/* =========================
+   DARK MODE
+========================= */
 .dark {
-  --background: oklch(0.15 0.02 240);
-  --foreground: oklch(0.98 0.01 85);
-  --card: oklch(0.2 0.02 240);
-  --card-foreground: oklch(0.98 0.01 85);
-  --popover: oklch(0.2 0.02 240);
-  --popover-foreground: oklch(0.98 0.01 85);
-  --primary: oklch(0.68 0.18 45);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.55 0.2 35);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.25 0.02 240);
-  --muted-foreground: oklch(0.7 0.02 85);
-  --accent: oklch(0.35 0.02 240);
-  --accent-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.3 0.02 240);
-  --input: oklch(0.3 0.02 240);
-  --ring: oklch(0.68 0.18 45);
+  --background: #0f1720;
+  --foreground: #fff6e2;
+
+  --card: #1a232c;
+  --card-foreground: #fff6e2;
+
+  --popover: #1a232c;
+  --popover-foreground: #fff6e2;
+
+  --primary: #fc7f2b;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e94e1b;
+  --secondary-foreground: #ffffff;
+
+  --muted: #1f2a33;
+  --muted-foreground: #9ca3af;
+
+  --accent: #2a2f36;
+  --accent-foreground: #fff6e2;
+
+  --border: #2a2f36;
+  --input: #2a2f36;
+  --ring: #fc7f2b;
 }
 
-/* BASE */
+/* =========================
+   BASE LAYER
+========================= */
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   body {
-    @apply bg-background text-foreground;
+    background: var(--background);
+    color: var(--foreground);
   }
 
   html {
@@ -61,9 +84,11 @@
   }
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
@@ -82,12 +107,23 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =========================
+   UTILITY CLASSES
+========================= */
 .animate-float { animation: float 3s ease-in-out infinite; }
 .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
 .animate-slide-in-left { animation: slideInLeft 0.6s ease-out forwards; }
 .animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
+.animate-marquee { animation: marquee 30s linear infinite; }
 
-/* GLASS */
+/* =========================
+   GLASS EFFECTS
+========================= */
 .glass {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
