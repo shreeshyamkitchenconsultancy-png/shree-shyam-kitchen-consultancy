@@ -91,10 +91,7 @@ export default function ArticlePage() {
   <li>✓ Insufficient working capital</li>
   <li>✓ Poor marketing execution</li>
 </ul>
-
-
   <p>
-    
     Successful restaurant businesses focus on operational efficiency,
     profitability, customer retention and system-driven management from the
     beginning.
