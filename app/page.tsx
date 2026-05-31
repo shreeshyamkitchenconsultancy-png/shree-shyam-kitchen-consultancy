@@ -15,7 +15,6 @@ import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 export default function Home() {
   return (
     <main className="relative">
-      <Header />
       <Hero />
       <Services />
       <Stats />

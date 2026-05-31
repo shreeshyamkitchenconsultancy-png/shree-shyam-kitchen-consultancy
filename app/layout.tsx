@@ -4,6 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import { Header } from "@/components/sections/header";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -72,28 +73,32 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
+  <Header />
+
   {children}
+
   <Analytics />
   <SpeedInsights />
- <GoogleAnalytics gaId="G-WKEHB9WNJK" />
- <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=AW-18058702907"
-></script>
+  <GoogleAnalytics gaId="G-WKEHB9WNJK" />
 
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      gtag('js', new Date());
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-18058702907"
+  />
 
-      gtag('config', 'G-WKEHB9WNJK');
-      gtag('config', 'AW-18058702907');
-    `,
-  }}
-/>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-WKEHB9WNJK');
+        gtag('config', 'AW-18058702907');
+      `,
+    }}
+  />
 </body>
     </html>
   )

@@ -8,13 +8,13 @@ import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Process" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#process", label: "Process" },
+  { href: "/#testimonials", label: "Testimonials" },
   { href: "/blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -41,7 +41,7 @@ export function Header() {
       >
         <div className="container mx-auto flex items-center justify-between px-4">
           {/* Logo */}
-          <Link href="#top" className="flex items-center gap-2">
+          <Link href="/#top" className="flex items-center gap-2">
             <div className="relative h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 overflow-hidden rounded-xl flex-shrink-0">
               <Image
   src="/images/logos/sskclogo.png"
