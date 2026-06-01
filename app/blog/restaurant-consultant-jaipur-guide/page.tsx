@@ -82,7 +82,9 @@ export default function ArticlePage() {
 </div>
 
         <section className="prose prose-lg max-w-none">
-  <h2>Introduction</h2>
+  <h2 className="text-4xl font-bold mb-6">
+  Introduction
+</h2>
 
   <p>
     Opening a restaurant in Jaipur can be a highly profitable business
@@ -108,7 +110,9 @@ export default function ArticlePage() {
   alt="Restaurant planning and business strategy"
 />
 <section id="why-restaurants-fail" className="prose prose-lg max-w-none mt-12">
-  <h2>Why Most Restaurants Fail Within the First Two Years in Jaipur</h2>
+  <h2 className="text-4xl font-bold mb-6">
+  Why Most Restaurants Fail Within the First Two Years in Jaipur
+</h2>
 
   <p>
     One of the biggest misconceptions among first-time restaurant owners is
@@ -149,7 +153,10 @@ export default function ArticlePage() {
   alt="Commercial kitchen layout and equipment"
 />
 <section id="choosing-location" className="prose prose-lg max-w-none mt-12">
-  <h2>Choosing the Right Location for Your Restaurant in Jaipur</h2>
+  <h2 className="text-4xl font-bold mb-6">
+  Choosing the Right Location for Your Restaurant in Jaipur
+</h2>
+
 
   <p>
     Location is one of the most important factors determining the success of a
@@ -184,7 +191,9 @@ export default function ArticlePage() {
 </InfoBox>
 </section>
 <section id="kitchen-design" className="prose prose-lg max-w-none mt-12">
-  <h2>Commercial Kitchen Design: The Foundation of Restaurant Efficiency</h2>
+  <h2 className="text-4xl font-bold mb-6">
+  Commercial Kitchen Design: The Foundation of Restaurant Efficiency
+</h2>
 
   <p>
     A well-designed commercial kitchen improves workflow, reduces staff movement,
@@ -226,7 +235,9 @@ export default function ArticlePage() {
 </InfoBox>
 </section>
 <section id="menu-engineering" className="prose prose-lg max-w-none mt-12">
-  <h2>Menu Engineering: Maximizing Profitability Through Smart Menu Design</h2>
+  <h2 className="text-4xl font-bold mb-6">
+    Menu Engineering: Maximizing Profitability Through Smart Menu Design
+  </h2>
 
   <p>
     A restaurant menu is more than a list of dishes. It is one of the most
@@ -266,7 +277,9 @@ export default function ArticlePage() {
 </section>
 
 <section id="staff-training" className="prose prose-lg max-w-none mt-12">
-  <h2>Staff Training and SOP Development</h2>
+  <h2 className="text-4xl font-bold mb-6">
+    Staff Training and SOP Development
+  </h2>
 
   <p>
     Even the best restaurant concept can struggle if the staff is not properly
@@ -310,7 +323,9 @@ export default function ArticlePage() {
   alt="Restaurant marketing strategies in Jaipur"
 />
 <section id="restaurant-marketing" className="prose prose-lg max-w-none mt-12">
-  <h2>Restaurant Marketing and Customer Acquisition</h2>
+  <h2 className="text-4xl font-bold mb-6">
+    Restaurant Marketing and Customer Acquisition
+  </h2>
 
   <p>
     Many restaurant owners assume that customers will automatically discover
@@ -356,7 +371,9 @@ export default function ArticlePage() {
 </section>
 
 <section id="consultant-help" className="prose prose-lg max-w-none mt-12">
-  <h2>How a Restaurant Consultant Helps Reduce Risk and Improve Profitability</h2>
+  <h2 className="text-4xl font-bold mb-6">
+    How a Restaurant Consultant Helps Reduce Risk and Improve Profitability
+  </h2>
 
   <p>
     Opening a restaurant involves numerous decisions related to concept
@@ -392,7 +409,9 @@ export default function ArticlePage() {
   </p>
 </section>
 <section className="prose prose-lg max-w-none mt-12">
-  <h2>Conclusion</h2>
+  <h2 className="text-4xl font-bold mb-6">
+    Conclusion
+  </h2>
 
   <p>
     Most restaurant failures in Jaipur are not caused by food quality but by
