@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function ArticlePage() {
   return (
-    <main className="container mx-auto px-4 py-24">
-  <article className="max-w-4xl mx-auto">
+    <main className="container mx-auto px-6 py-30">
+  <article className="max-w-6xl mx-auto">
       <BlogImage
   src="/images/blog/blogimage1.png"
   alt="Restaurant Consultant in Jaipur"
