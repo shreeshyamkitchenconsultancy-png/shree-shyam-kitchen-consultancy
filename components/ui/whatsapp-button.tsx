@@ -13,11 +13,17 @@ export function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50"
     >
       <Link
-        href="https://wa.me/917820942754"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center gap-3"
-      >
+  href="https://wa.me/917820942754"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    window.gtag?.('event', 'whatsapp_click', {
+      event_category: 'lead',
+      event_label: 'WhatsApp Floating Button'
+    });
+  }}
+  className="group flex items-center gap-3"
+>
         {/* Tooltip */}
         <motion.span
           initial={{ opacity: 0, x: 10 }}
