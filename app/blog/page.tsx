@@ -67,7 +67,7 @@ export default function BlogPage() {
       Read Article →
     </Link>
      </div>
-    </div>
+    </div>   
             {/* CTA SECTION */}
       <div className="mt-20">
         <CTA />
