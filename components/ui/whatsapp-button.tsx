@@ -18,9 +18,10 @@ export function WhatsAppButton() {
   rel="noopener noreferrer"
   onClick={() => {
     window.gtag?.('event', 'whatsapp_click', {
-      event_category: 'lead',
-      event_label: 'WhatsApp Floating Button'
-    });
+  event_category: 'lead',
+  event_label: 'WhatsApp Floating Button',
+  page_path: window.location.pathname
+  });
   }}
   className="group flex items-center gap-3"
 >
