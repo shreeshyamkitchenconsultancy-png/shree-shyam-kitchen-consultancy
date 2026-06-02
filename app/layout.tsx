@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Header } from "@/components/sections/header";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -74,7 +75,9 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
   <Header />
-
+  
+  <WhatsAppButton />
+  
   {children}
 
   <Analytics />
