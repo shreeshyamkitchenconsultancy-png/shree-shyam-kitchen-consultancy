@@ -17,11 +17,14 @@ export function WhatsAppButton() {
   target="_blank"
   rel="noopener noreferrer"
   onClick={() => {
-    window.gtag?.('event', 'whatsapp_click', {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag('event', 'generate_lead', {
+      method: 'whatsapp',
       page_path: window.location.pathname,
       page_title: document.title
     });
-  }}
+  }
+}}
   className="group flex items-center gap-3"
 >
         {/* Tooltip */}
