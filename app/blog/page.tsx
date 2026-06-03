@@ -68,6 +68,30 @@ export default function BlogPage() {
     </Link>
      </div>
     </div>   
+
+    <div className="rounded-xl border overflow-hidden shadow-sm mt-10">
+    <div className="p-8">
+    <span className="text-sm font-medium">
+      Restaurant Staffing Guide
+    </span>
+
+    <h2 className="text-3xl font-semibold mt-3 mb-3">
+      How Many Staff Does Your Restaurant Actually Need? | Staffing Guide Jaipur 2026
+    </h2>
+
+    <p className="text-muted-foreground mb-6">
+      A practical staffing model for restaurant owners, café operators and QSR founders in Jaipur.
+      Learn how to control labour cost, eliminate overstaffing and build a role-based production system.
+    </p>
+
+    <Link
+      href="/blog/restaurant-staffing-guide"
+      className="inline-flex rounded-lg border px-4 py-2 font-medium"
+    >
+      Read Article →
+    </Link>
+     </div>
+    </div>   
             {/* CTA SECTION */}
       <div className="mt-20">
         <CTA />
