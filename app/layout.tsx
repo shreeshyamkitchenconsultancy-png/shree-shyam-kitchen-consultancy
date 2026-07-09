@@ -20,6 +20,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shreeshyamkitchenconsultancy.com"),
+
+  alternates: {
+    canonical: "/",
+  },
   title: 'Shree Shyam Kitchen Consultancy | Restaurant & Kitchen Consulting Experts',
   description: 'End-to-end restaurant consultancy for cafes, restaurants, cloud kitchens, bakeries, resorts & hospitality ventures across India. 10+ years experience, 15+ projects delivered.',
   keywords: 'restaurant consultancy, restaurant consultant Jaipur, kitchen design consultancy, cloud kitchen setup, cafe consultancy, menu engineering, restaurant operations consultancy, hospitality consultancy India',
