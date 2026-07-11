@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     description: 'Transform your restaurant ideas into profitable hospitality businesses.',
   },
   icons: {
-  icon: '/favicon.png',
-  apple: '/favicon.png',
+  icon: '/favicon-32x32.png',
+  apple: '/favicon-32x32.png',
 },
 }
 
