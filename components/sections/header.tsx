@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <>
-      <motion.header
+      <m.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -47,7 +47,7 @@ export function Header() {
   src="/images/logos/sskclogo.png"
   alt="Shree Shyam Kitchen Consultancy logo"
   fill
-  sizes="(max-width: 768px) 100vw, 20vw"
+  sizes="(max-width: 640px) 48px, (max-width: 1024px) 64px, 80px"
   className="object-contain"
 />
             </div>
@@ -106,12 +106,12 @@ export function Header() {
             )}
           </Button>
         </div>
-      </motion.header>
+      </m.header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -146,7 +146,7 @@ export function Header() {
                 </Button>
               </div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

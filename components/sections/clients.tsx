@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 const logos = [
   {
@@ -92,7 +92,7 @@ export function Clients() {
     <section className="relative overflow-hidden bg-muted/30 py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <motion.div
+        <m.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -108,7 +108,7 @@ export function Clients() {
           <p className="mx-auto max-w-2xl text-muted-foreground">
             We have  had the privilege of working with amazing hospitality brands and industry partners across India.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Logo Marquee */}
         <div className="relative mb-12 overflow-hidden">
@@ -128,6 +128,7 @@ export function Clients() {
       src={logo.image}
       alt={logo.name}
       fill
+      sizes="96px"
       className="object-contain"
     />
   </div>
@@ -141,7 +142,7 @@ export function Clients() {
         </div>
 
         {/* Partners Grid */}
-<motion.div
+<m.div
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
@@ -174,7 +175,7 @@ export function Clients() {
       </div>
     ))}
   </div>
-</motion.div>
+</m.div>
       </div>
     </section>
   );

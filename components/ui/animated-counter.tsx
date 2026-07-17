@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 interface AnimatedCounterProps {
   value: number;
@@ -47,7 +47,7 @@ export function AnimatedCounter({
   }, [isInView, value, duration]);
 
   return (
-    <motion.span
+    <m.span
       ref={ref}
       className={className}
       initial={{ opacity: 0, scale: 0.5 }}
@@ -57,6 +57,6 @@ export function AnimatedCounter({
       {prefix}
       {count}
       {suffix}
-    </motion.span>
+    </m.span>
   );
 }

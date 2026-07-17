@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { 
   MessageSquare, 
   Search, 
@@ -79,7 +79,6 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
     src={processImage}
     alt="Process Background"
     fill
-    priority
     className="object-cover opacity-[0.5] scale-105"
   />
 
@@ -103,7 +102,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -120,7 +119,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
             A systematic, proven approach to transform your hospitality vision 
             into a successful, profitable business.
           </p>
-        </motion.div>
+        </m.div>
         
         {/* Process Steps */}
         <div className="relative">
@@ -129,7 +128,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
 
           <div className="space-y-8 lg:space-y-0">
             {steps.map((step, index) => (
-              <motion.div
+              <m.div
                 key={step.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +140,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
               >
                 {/* Content Card */}
                 <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:pr-8 lg:text-right" : "lg:pl-8"}`}>
-                  <motion.div
+                  <m.div
                     whileHover={{ scale: 1.02 }}
                      className="group rounded-2xl border border-border/50 bg-background/80 backdrop-blur-md p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
                   >
@@ -186,22 +185,22 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
                     <p className={`mt-3 text-muted-foreground ${index % 2 === 0 ? "lg:text-right" : ""}`}>
                       {step.description}
                     </p>
-                  </motion.div>
+                  </m.div>
                 </div>
 
                 {/* Center Icon - Desktop */}
                 <div className="relative z-10 hidden lg:flex lg:w-20 lg:justify-center">
-                  <motion.div
+                  <m.div
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/30"
                   >
                     <step.icon className="h-6 w-6 text-white" />
-                  </motion.div>
+                  </m.div>
                 </div>
 
                 {/* Spacer for alternating layout */}
                 <div className="hidden lg:block lg:w-[calc(50%-40px)]" />
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

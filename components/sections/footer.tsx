@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image"
 import Link from "next/link";
 import { 
@@ -50,7 +50,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,6 +62,7 @@ export function Footer() {
       src="/images/logos/sskclogo.png"
       alt="Shree Shyam Kitchen Consultancy logo"
       fill
+      sizes="(max-width: 640px) 48px, 64px"
       className="object-contain"
     />
   </div>
@@ -83,10 +84,10 @@ export function Footer() {
             <p className="text-sm italic text-background/50">
               &quot;Designed For Hospitality Growth & Operational Excellence&quot;
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Quick Links */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -105,10 +106,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
 
           {/* Services */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -127,10 +128,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
 
           {/* Contact Info */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -181,7 +182,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

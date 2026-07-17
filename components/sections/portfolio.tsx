@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -238,7 +238,7 @@ export function Portfolio() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -255,10 +255,10 @@ export function Portfolio() {
             Explore our diverse portfolio of hospitality projects delivered across India, 
             from fine dining restaurants to cloud kitchens.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Filter Tabs */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -280,13 +280,13 @@ export function Portfolio() {
               {category}
             </Button>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <m.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project, index) => (
-              <motion.div
+              <m.div
                 key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -300,6 +300,7 @@ export function Portfolio() {
                     src={project.image ?? "/images/portfolio/bamboonation2.png"}
                     alt={project.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -368,14 +369,14 @@ export function Portfolio() {
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
 
         {/* Show More Button */}
         {filteredProjects.length > 6 && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -390,7 +391,7 @@ export function Portfolio() {
               {showAll ? "Show Less" : `View All ${filteredProjects.length} Projects`}
               <ArrowRight className={`ml-2 h-4 w-4 transition-transform ${showAll ? "rotate-90" : "group-hover:translate-x-1"}`} />
             </Button>
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

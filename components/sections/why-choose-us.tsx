@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { 
   Target, 
   Sparkles, 
@@ -65,7 +65,7 @@ export function WhyChooseUs() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,12 +81,12 @@ export function WhyChooseUs() {
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
             We combine hands-on culinary expertise, operational knowledge, and business strategy to help hospitality brands build scalable, profitable, and operationally efficient food businesses.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason, index) => (
-            <motion.div
+            <m.div
               key={reason.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -98,12 +98,12 @@ export function WhyChooseUs() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               {/* Icon */}
-              <motion.div
+              <m.div
                 className="relative mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
                 <reason.icon className="h-6 w-6 text-primary" />
-              </motion.div>
+              </m.div>
 
               {/* Content */}
               <h3 className="relative mb-2 text-lg font-bold text-foreground">
@@ -113,7 +113,7 @@ export function WhyChooseUs() {
                 {reason.description}
               </p>
 
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

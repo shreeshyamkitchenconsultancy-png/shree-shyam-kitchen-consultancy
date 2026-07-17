@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -10,16 +10,16 @@ export function CTA() {
     <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-24">
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0">
-        <motion.div
+      <m.div
           className="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
+      />
+      <m.div
           className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 10, repeat: Infinity }}
-        />
+      />
       </div>
 
       {/* Pattern overlay */}
@@ -34,7 +34,7 @@ export function CTA() {
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <motion.div
+        <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -47,9 +47,9 @@ export function CTA() {
               Book a free consultation with our hospitality experts and take the first step 
               towards building a profitable hospitality business.
             </p>
-          </motion.div>
+        </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -98,10 +98,10 @@ export function CTA() {
                 Call Now
               </Link>
             </Button>
-          </motion.div>
+          </m.div>
 
           {/* Trust indicators */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -124,7 +124,7 @@ export function CTA() {
               <div className="h-2 w-2 rounded-full bg-white/60" />
               Pan India Service
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -86,12 +86,12 @@ export function Hero({
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-accent/20">
       {/* Floating decorative elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
+        <m.div
           className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        <motion.div
+        <m.div
           className="absolute -left-20 bottom-40 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 10, repeat: Infinity }}
@@ -101,17 +101,14 @@ export function Hero({
       <div className="container relative z-10 mx-auto px-4 pb-16 pt-24 lg:pt-32">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+          <m.div
             className="space-y-8"
           >
            
            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <m.h1
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
               className="font-serif text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl"
             >
@@ -119,10 +116,10 @@ export function Hero({
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Profitable Businesses
               </span>
-            </motion.h1>
+            </m.h1>
 
              {/* Subheadline */}
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -130,9 +127,9 @@ export function Hero({
             >
               End-to-end restaurant consultancy for cafes, restaurants, cloud kitchens, 
               bakeries, resorts & hospitality ventures across India.
-            </motion.p>
+            </m.p>
 
-              <motion.form
+              <m.form
               onSubmit={handleSearch}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -159,9 +156,9 @@ export function Hero({
               <p className="text-sm text-muted-foreground">
                 {searchFeedback || "Search site sections like Services, About, Portfolio, Process, Testimonials, Contact."}
               </p>
-            </motion.form>
+            </m.form>
             {/* CTA Buttons */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -198,17 +195,17 @@ export function Hero({
                   Chat on WhatsApp
                 </Link>
               </Button>
-            </motion.div>
+            </m.div>
 
              {/* Trust Badges */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="grid grid-cols-2 gap-3"
             >
               {trustBadges.map((badge, index) => (
-                <motion.div
+                <m.div
                   key={badge.text}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -219,13 +216,13 @@ export function Hero({
                     <badge.icon className="h-5 w-5 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-foreground">{badge.text}</span>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
             {/* Right Content - Image Grid */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -233,7 +230,7 @@ export function Hero({
           >
             <div className="grid grid-cols-2 gap-4">
               {/* Main Image */}
-              <motion.div
+              <m.div
                 className="col-span-2 overflow-hidden rounded-2xl shadow-2xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
@@ -244,16 +241,15 @@ export function Hero({
   alt="Modern hospitality kitchen interior"
   fill
   sizes="(max-width: 768px) 100vw, 50vw"
-  loading="eager"
   priority
   className="object-cover"
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
               </div>
-              </motion.div>
+              </m.div>
 
               {/* Secondary Images */}
-              <motion.div
+              <m.div
                 className="overflow-hidden rounded-xl shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -264,15 +260,13 @@ export function Hero({
   alt="Hospitality kitchen planning visual"
   fill
   sizes="(max-width: 768px) 50vw, 25vw"
-  loading="eager"
-  priority
   className="object-cover"
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
               </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 className="overflow-hidden rounded-xl shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -288,11 +282,11 @@ export function Hero({
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
               </div>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Floating Stats Card */}
-            <motion.div
+            <m.div
               className="glass absolute -bottom-6 -left-6 rounded-2xl p-4 shadow-xl"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
@@ -306,19 +300,19 @@ export function Hero({
                   <p className="text-xs text-muted-foreground">Projects Completed</p>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
 
         {/* Animated Stats Section */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
           className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
         >
           {stats.map((stat, index) => (
-            <motion.div
+            <m.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -331,9 +325,9 @@ export function Hero({
                 className="text-3xl font-bold text-primary md:text-4xl"
               />
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

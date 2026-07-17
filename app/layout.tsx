@@ -1,11 +1,12 @@
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import {GoogleAnalytics,GoogleTagManager,} from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata, Viewport } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Header } from "@/components/sections/header";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { MotionProvider } from "@/components/ui/motion-provider";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -66,16 +67,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
+  <MotionProvider>
   <Header />
   
   <WhatsAppButton />
   
   {children}
+  </MotionProvider>
 
   <GoogleTagManager gtmId="GTM-PZB7TBNL" />
-
-<GoogleAnalytics gaId="G-WKEHB9WNJK" />
-
 <Analytics />
 <SpeedInsights />
   </body>

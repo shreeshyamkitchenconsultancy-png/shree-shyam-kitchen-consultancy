@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Utensils, Clock, MapPin, Award } from "lucide-react";
 
@@ -56,19 +56,19 @@ export function Stats() {
 </div>
 
       {/* Floating elements */}
-      <motion.div
+      <m.div
         className="absolute left-10 top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
-      <motion.div
+      <m.div
         className="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-secondary/20 blur-3xl"
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
 
       <div className="container relative z-10 mx-auto px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,11 +81,11 @@ export function Stats() {
           <p className="mx-auto max-w-2xl text-background/70">
             Our track record of success in transforming hospitality businesses across India
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <motion.div
+            <m.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -94,13 +94,13 @@ export function Stats() {
               className="group relative overflow-hidden rounded-2xl border border-background/10 bg-background/5 p-8 text-center backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-background/10"
             >
               {/* Icon */}
-              <motion.div
+              <m.div
                 className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/20"
                 whileHover={{ scale: 1.1, rotate: 10 }}
                 transition={{ duration: 0.3 }}
               >
                 <stat.icon className="h-8 w-8 text-primary" />
-              </motion.div>
+              </m.div>
 
               {/* Counter */}
               <AnimatedCounter
@@ -114,7 +114,7 @@ export function Stats() {
                 {stat.label}
               </h3>
               <p className="text-sm text-background/60">{stat.description}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

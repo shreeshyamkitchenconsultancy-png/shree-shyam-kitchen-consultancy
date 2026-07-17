@@ -1,4 +1,5 @@
 import { CTA } from "@/components/sections/cta";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function BlogPage() {
@@ -14,11 +15,15 @@ export default function BlogPage() {
       </p>
 
       <div className="rounded-xl border overflow-hidden shadow-sm">
-        <img
-          src="/images/blog/blogimage1.png"
-          alt="Restaurant Consultant in Jaipur"
-          className="w-full h-64 object-cover"
-        />
+        <div className="relative h-64 w-full">
+          <Image
+            src="/images/blog/blogimage1.png"
+            alt="Restaurant Consultant in Jaipur"
+            fill
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-cover"
+          />
+        </div>
 
         <div className="p-8">
           <span className="text-sm font-medium">

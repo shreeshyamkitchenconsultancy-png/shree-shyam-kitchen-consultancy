@@ -2,11 +2,11 @@
 
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export function WhatsAppButton() {
   return (
-    <motion.div
+    <m.div
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: "spring", stiffness: 200 }}
@@ -28,16 +28,16 @@ export function WhatsAppButton() {
   className="group flex items-center gap-3"
 >
         {/* Tooltip */}
-        <motion.span
+        <m.span
           initial={{ opacity: 0, x: 10 }}
           whileHover={{ opacity: 1, x: 0 }}
           className="hidden rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background shadow-lg sm:block"
         >
           Chat with us
-        </motion.span>
+        </m.span>
 
         {/* Button */}
-        <motion.div
+        <m.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-shadow hover:shadow-xl hover:shadow-[#25D366]/40"
@@ -46,8 +46,8 @@ export function WhatsAppButton() {
           
           {/* Pulse animation */}
           <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-30" />
-        </motion.div>
+        </m.div>
       </Link>
-    </motion.div>
+    </m.div>
   );
 }

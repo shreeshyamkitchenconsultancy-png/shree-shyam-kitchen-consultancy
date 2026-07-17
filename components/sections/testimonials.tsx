@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,7 +37,7 @@ const testimonials = [
   },
 ];
 
-export function Testimonials({ backgroundImage = "/images/herologo/testimoniallogo.png/" }: TestimonialsProps) {
+export function Testimonials({ backgroundImage = "/images/herologo/testimoniallogo.png" }: TestimonialsProps) {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -70,18 +70,14 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
           className="object-cover brightness-75"
         />
         <div className="absolute inset-0 bg-black/40" />
-      npm run build
-      npm run start
-      # or with pnpm:
-      pnpm build
-      pnpm start      </div>
+      </div>
 
-      <motion.div
+      <m.div
         className="absolute left-10 top-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 6, repeat: Infinity }}
       />
-      <motion.div
+      <m.div
         className="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-secondary/30 blur-3xl"
         animate={{ scale: [1.2, 1, 1.2] }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -89,7 +85,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -104,12 +100,12 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
           <p className="mx-auto max-w-2xl text-background/70">
             Hear from hospitality entrepreneurs who transformed their businesses with our consultancy.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Testimonial Slider */}
         <div className="relative mx-auto max-w-4xl">
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={current}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -149,7 +145,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
 
           {/* Navigation */}
