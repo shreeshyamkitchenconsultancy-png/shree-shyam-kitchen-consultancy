@@ -89,12 +89,20 @@ export function Hero({
         <m.div
           className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
+          transition={{
+            delay: 2,
+            duration: 8,
+            repeat: Infinity,
+          }}
         />
         <m.div
           className="absolute -left-20 bottom-40 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 10, repeat: Infinity }}
+          transition={{
+            delay: 2,
+            duration: 10,
+            repeat: Infinity,
+          }}
         />
       </div>
 
@@ -232,16 +240,15 @@ export function Hero({
               {/* Main Image */}
               <m.div
                 className="col-span-2 overflow-hidden rounded-2xl shadow-2xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
               >
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
                 <Image
   src={heroMain}
   alt="Modern hospitality kitchen interior"
   fill
-  sizes="(max-width: 768px) 100vw, 50vw"
   priority
+  fetchPriority="high"
+  sizes="(max-width: 768px) 100vw, 50vw"
   className="object-cover"
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
@@ -251,8 +258,6 @@ export function Hero({
               {/* Secondary Images */}
               <m.div
                 className="overflow-hidden rounded-xl shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
               >
                 <div className="relative aspect-square overflow-hidden rounded-xl">
                <Image
@@ -268,8 +273,6 @@ export function Hero({
 
               <m.div
                 className="overflow-hidden rounded-xl shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
               >
                 <div className="relative aspect-square overflow-hidden rounded-xl">
               <Image
