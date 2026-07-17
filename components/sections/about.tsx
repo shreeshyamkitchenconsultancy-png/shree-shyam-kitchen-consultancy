@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MotionDiv } from "@/components/ui/motion";
 import { Award, Hotel, Star, ChefHat, Users, Globe } from "lucide-react";
 
 interface AboutProps {
@@ -50,11 +49,7 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
       <div className="container relative z-10 mx-auto px-4">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left - Image & Decorations */}
-          <MotionDiv
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
             className="relative"
           >
 <div className="relative overflow-hidden rounded-3xl shadow-2xl">
@@ -91,14 +86,10 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
             >
               <span className="text-sm font-medium text-foreground">IHM Jaipur Graduate</span>
             </div>
-          </MotionDiv>
+          </div>
 
           {/* Right - Content */}
-          <MotionDiv
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
             className="space-y-8"
           >
             <div>
@@ -158,7 +149,7 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
                 </div>
               ))}
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </div>
     </section>

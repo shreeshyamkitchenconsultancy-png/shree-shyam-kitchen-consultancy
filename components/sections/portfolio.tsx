@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { m } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -238,11 +237,7 @@ export function Portfolio() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mx-auto mb-12 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -255,14 +250,10 @@ export function Portfolio() {
             Explore our diverse portfolio of hospitality projects delivered across India, 
             from fine dining restaurants to cloud kitchens.
           </p>
-        </m.div>
+        </div>
 
         {/* Filter Tabs */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+        <div
           className="mb-12 flex flex-wrap justify-center gap-3"
         >
           {categories.map((category) => (
@@ -280,7 +271,7 @@ export function Portfolio() {
               {category}
             </Button>
           ))}
-        </m.div>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

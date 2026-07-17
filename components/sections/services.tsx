@@ -1,4 +1,3 @@
-import { MotionDiv } from "@/components/ui/motion";
 import { 
   ChefHat,
   Lightbulb,
@@ -66,11 +65,7 @@ export function Services() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Section Header */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -83,14 +78,10 @@ export function Services() {
             From concept to launch and beyond, we provide end-to-end consulting services 
             tailored to transform your hospitality vision into a thriving business.
           </p>
-        </MotionDiv>
+        </div>
 
         {/* Services Grid */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+        <div
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {services.map((service, index) => (
@@ -139,7 +130,7 @@ export function Services() {
               </span>
             </div>
           ))}
-        </MotionDiv>
+        </div>
       </div>
     </section>
   );

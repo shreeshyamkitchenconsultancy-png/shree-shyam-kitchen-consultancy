@@ -1,4 +1,3 @@
-import { MotionDiv } from "@/components/ui/motion";
 import { 
   Target, 
   Sparkles, 
@@ -63,11 +62,7 @@ export function WhyChooseUs() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -79,7 +74,7 @@ export function WhyChooseUs() {
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
             We combine hands-on culinary expertise, operational knowledge, and business strategy to help hospitality brands build scalable, profitable, and operationally efficient food businesses.
           </p>
-        </MotionDiv>
+        </div>
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,4 +1,3 @@
-import { MotionDiv } from "@/components/ui/motion";
 import Image from "next/image"
 import Link from "next/link";
 import { 
@@ -41,10 +40,7 @@ export function Footer() {
     <footer className="relative bg-foreground text-background">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"
         >
           {/* Brand Column */}
@@ -161,7 +157,7 @@ export function Footer() {
               ))}
             </div>
           </div>
-        </MotionDiv>
+        </div>
       </div>
 
       {/* Bottom Bar */}

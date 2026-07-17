@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MotionDiv } from "@/components/ui/motion";
 import { 
   MessageSquare, 
   Search, 
@@ -100,11 +99,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -117,7 +112,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
             A systematic, proven approach to transform your hospitality vision 
             into a successful, profitable business.
           </p>
-        </MotionDiv>
+        </div>
         
         {/* Process Steps */}
         <div className="relative">

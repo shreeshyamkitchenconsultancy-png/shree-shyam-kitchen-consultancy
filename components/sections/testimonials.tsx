@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { m, AnimatePresence, useReducedMotion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,27 +36,69 @@ const testimonials = [
   },
 ];
 
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  return prefersReducedMotion;
+}
+
 export function Testimonials({ backgroundImage = "/images/herologo/testimoniallogo.png" }: TestimonialsProps) {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const shouldReduceMotion = useReducedMotion();
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shouldReduceMotion = usePrefersReducedMotion();
+
+  const updateCurrent = (nextIndex: number) => {
+    if (transitionTimer.current) {
+      clearTimeout(transitionTimer.current);
+    }
+
+    if (shouldReduceMotion) {
+      setCurrent(nextIndex);
+      return;
+    }
+
+    setIsTransitioning(true);
+    transitionTimer.current = setTimeout(() => {
+      setCurrent(nextIndex);
+      requestAnimationFrame(() => setIsTransitioning(false));
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimer.current) {
+        clearTimeout(transitionTimer.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!isAutoPlaying || shouldReduceMotion) return;
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
+      updateCurrent((current + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [isAutoPlaying, shouldReduceMotion]);
+  }, [current, isAutoPlaying, shouldReduceMotion]);
 
   const next = () => {
     setIsAutoPlaying(false);
-    setCurrent((prev) => (prev + 1) % testimonials.length);
+    updateCurrent((current + 1) % testimonials.length);
   };
 
   const prev = () => {
     setIsAutoPlaying(false);
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    updateCurrent((current - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
@@ -82,10 +123,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="mb-12 text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-2 text-sm font-medium text-primary">
@@ -97,18 +135,17 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
           <p className="mx-auto max-w-2xl text-background/70">
             Hear from hospitality entrepreneurs who transformed their businesses with our consultancy.
           </p>
-        </m.div>
+        </div>
 
         {/* Testimonial Slider */}
         <div className="relative mx-auto max-w-4xl">
-          <AnimatePresence mode="wait">
-            <m.div
+            <div
               key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="rounded-3xl border border-background/10 bg-background/5 p-8 backdrop-blur-sm md:p-12"
+              className={`rounded-3xl border border-background/10 bg-background/5 p-8 backdrop-blur-sm md:p-12 ${
+                shouldReduceMotion ? "" : "transition-opacity duration-300"
+              } ${
+                isTransitioning ? "opacity-0" : "opacity-100"
+              }`}
             >
               {/* Quote Icon */}
               <Quote className="mb-6 h-12 w-12 text-primary/50" />
@@ -142,8 +179,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
                   </p>
                 </div>
               </div>
-            </m.div>
-          </AnimatePresence>
+            </div>
 
           {/* Navigation */}
           <div className="mt-8 flex items-center justify-center gap-4">
@@ -163,7 +199,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
                   key={index}
                   onClick={() => {
                     setIsAutoPlaying(false);
-                    setCurrent(index);
+                    updateCurrent(index);
                   }}
                   className={`h-2 rounded-full transition-all ${
                     index === current

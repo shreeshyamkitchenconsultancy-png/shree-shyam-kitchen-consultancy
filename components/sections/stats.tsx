@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MotionDiv } from "@/components/ui/motion";
 import { Utensils, Clock, MapPin, Award } from "lucide-react";
 
 const stats = [
@@ -61,11 +60,7 @@ export function Stats() {
       />
 
       <div className="container relative z-10 mx-auto px-4">
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mb-12 text-center"
         >
           <h2 className="mb-4 font-serif text-3xl font-bold text-background md:text-4xl">
@@ -74,7 +69,7 @@ export function Stats() {
           <p className="mx-auto max-w-2xl text-background/70">
             Our track record of success in transforming hospitality businesses across India
           </p>
-        </MotionDiv>
+        </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (

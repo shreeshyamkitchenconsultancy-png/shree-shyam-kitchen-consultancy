@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MotionDiv } from "@/components/ui/motion";
 
 const logos = [
   {
@@ -86,11 +85,7 @@ export function Clients() {
     <section className="relative overflow-hidden bg-muted/30 py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="mb-12 text-center"
         >
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -102,7 +97,7 @@ export function Clients() {
           <p className="mx-auto max-w-2xl text-muted-foreground">
             We have  had the privilege of working with amazing hospitality brands and industry partners across India.
           </p>
-        </MotionDiv>
+        </div>
 
         {/* Logo Marquee */}
         <div className="relative mb-12 overflow-hidden">
@@ -136,11 +131,7 @@ export function Clients() {
         </div>
 
         {/* Partners Grid */}
-<MotionDiv
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.2 }}
+<div
   className="mt-16"
 >
   <h3 className="mb-10 text-center font-serif text-2xl font-bold text-foreground">
@@ -169,7 +160,7 @@ export function Clients() {
       </div>
     ))}
   </div>
-</MotionDiv>
+</div>
       </div>
     </section>
   );

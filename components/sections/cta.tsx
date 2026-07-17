@@ -1,4 +1,3 @@
-import { MotionDiv } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -27,12 +26,8 @@ export function CTA() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        <MotionDiv
+        <div
             className="mx-auto max-w-4xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
           <div>
             <h2 className="mb-6 font-serif text-3xl font-bold text-white md:text-4xl lg:text-5xl">
@@ -112,7 +107,7 @@ export function CTA() {
               Pan India Service
             </div>
           </div>
-        </MotionDiv>
+        </div>
       </div>
     </section>
   );
