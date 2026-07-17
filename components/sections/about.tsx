@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { m } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import { Award, Hotel, Star, ChefHat, Users, Globe } from "lucide-react";
 
 interface AboutProps {
@@ -52,7 +50,7 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
       <div className="container relative z-10 mx-auto px-4">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left - Image & Decorations */}
-          <m.div
+          <MotionDiv
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -73,10 +71,8 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
             </div>
 
             {/* Floating Experience Card */}
-            <m.div
+            <div
               className="glass absolute -bottom-6 -right-6 rounded-2xl p-5 shadow-xl md:bottom-10 md:right-[-40px]"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity }}
             >
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
@@ -87,20 +83,18 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
                   <p className="text-sm text-muted-foreground">Industry Experience</p>
                 </div>
               </div>
-            </m.div>
+            </div>
 
             {/* Floating badge */}
-            <m.div
+            <div
               className="glass absolute -top-4 left-4 rounded-xl px-4 py-2 shadow-lg"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
             >
               <span className="text-sm font-medium text-foreground">IHM Jaipur Graduate</span>
-            </m.div>
-          </m.div>
+            </div>
+          </MotionDiv>
 
           {/* Right - Content */}
-          <m.div
+          <MotionDiv
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -139,40 +133,32 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground">Professional Journey</h3>
               <div className="grid gap-3 sm:grid-cols-2">
-                {experience.map((exp, index) => (
-                  <m.div
+                {experience.map((exp) => (
+                  <div
                     key={exp.company}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
                     className="rounded-xl border border-border/50 bg-card/50 p-4 transition-all hover:border-primary/30 hover:shadow-md"
                   >
                     <p className="text-xs font-medium uppercase tracking-wide text-primary">{exp.role}</p>
                     <p className="font-semibold text-foreground">{exp.company}</p>
                     <p className="text-sm text-muted-foreground">{exp.description}</p>
-                  </m.div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Highlight Badges */}
             <div className="flex flex-wrap gap-3">
-              {highlights.map((item, index) => (
-                <m.div
+              {highlights.map((item) => (
+                <div
                   key={item.text}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
                   className="flex items-center gap-2 rounded-full border border-border/50 bg-muted/50 px-4 py-2"
                 >
                   <item.icon className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-foreground">{item.text}</span>
-                </m.div>
+                </div>
               ))}
             </div>
-          </m.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

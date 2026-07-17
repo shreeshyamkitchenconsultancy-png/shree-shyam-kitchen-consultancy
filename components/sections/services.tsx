@@ -1,6 +1,4 @@
-"use client";
-
-import { m } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import { 
   ChefHat,
   Lightbulb,
@@ -57,25 +55,6 @@ const services = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function Services() {
   return (
     <section id="services" className="relative overflow-hidden bg-card py-24">
@@ -87,7 +66,7 @@ export function Services() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Section Header */}
-        <m.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -104,20 +83,19 @@ export function Services() {
             From concept to launch and beyond, we provide end-to-end consulting services 
             tailored to transform your hospitality vision into a thriving business.
           </p>
-        </m.div>
+        </MotionDiv>
 
         {/* Services Grid */}
-        <m.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {services.map((service, index) => (
-            <m.div
+            <div
               key={service.title}
-              variants={itemVariants}
               className="group relative overflow-hidden rounded-2xl border border-border/50 bg-background p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
             >
               {/* Hover gradient */}
@@ -147,22 +125,21 @@ export function Services() {
               </ul>
 
               {/* Learn More Link */}
-              <m.a
+              <a
                 href="#contact"
-                className="relative inline-flex items-center gap-2 text-sm font-medium text-primary transition-all hover:gap-3"
-                whileHover={{ x: 5 }}
+                className="relative inline-flex items-center gap-2 text-sm font-medium text-primary transition-all hover:translate-x-1 hover:gap-3"
               >
                 Learn More
                 <ArrowRight className="h-4 w-4" />
-              </m.a>
+              </a>
 
               {/* Service number */}
               <span className="absolute right-4 top-4 font-serif text-5xl font-bold text-foreground/5">
                 {String(index + 1).padStart(2, "0")}
               </span>
-            </m.div>
+            </div>
           ))}
-        </m.div>
+        </MotionDiv>
       </div>
     </section>
   );

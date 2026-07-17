@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { m } from "framer-motion";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { MotionDiv } from "@/components/ui/motion";
 import { Utensils, Clock, MapPin, Award } from "lucide-react";
 
 const stats = [
@@ -56,19 +53,15 @@ export function Stats() {
 </div>
 
       {/* Floating elements */}
-      <m.div
+      <div
         className="absolute left-10 top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 6, repeat: Infinity }}
       />
-      <m.div
+      <div
         className="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-secondary/20 blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
       />
 
       <div className="container relative z-10 mx-auto px-4">
-        <m.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,40 +74,33 @@ export function Stats() {
           <p className="mx-auto max-w-2xl text-background/70">
             Our track record of success in transforming hospitality businesses across India
           </p>
-        </m.div>
+        </MotionDiv>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <m.div
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-2xl border border-background/10 bg-background/5 p-8 text-center backdrop-blur-sm transition-all hover:border-primary/50 hover:bg-background/10"
             >
               {/* Icon */}
-              <m.div
-                className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/20"
-                whileHover={{ scale: 1.1, rotate: 10 }}
-                transition={{ duration: 0.3 }}
+              <div
+                className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/20 transition-transform duration-300 group-hover:rotate-[10deg] group-hover:scale-110"
               >
                 <stat.icon className="h-8 w-8 text-primary" />
-              </m.div>
+              </div>
 
               {/* Counter */}
-              <AnimatedCounter
-                value={stat.value}
-                suffix={stat.suffix}
-                className="mb-2 block text-4xl font-bold text-background md:text-5xl"
-              />
+              <span className="mb-2 block text-4xl font-bold text-background md:text-5xl">
+                {stat.value}
+                {stat.suffix}
+              </span>
 
               {/* Label */}
               <h3 className="mb-2 text-lg font-semibold text-background">
                 {stat.label}
               </h3>
               <p className="text-sm text-background/60">{stat.description}</p>
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

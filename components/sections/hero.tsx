@@ -17,7 +17,6 @@ import {
   Search 
 } from "lucide-react";
 import Link from "next/link";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 interface HeroProps {
   heroMain?: string;
@@ -86,23 +85,11 @@ export function Hero({
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-accent/20">
       {/* Floating decorative elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <m.div
+        <div
           className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{
-            delay: 2,
-            duration: 8,
-            repeat: Infinity,
-          }}
         />
-        <m.div
+        <div
           className="absolute -left-20 bottom-40 h-96 w-96 rounded-full bg-secondary/10 blur-3xl"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-          transition={{
-            delay: 2,
-            duration: 10,
-            repeat: Infinity,
-          }}
         />
       </div>
 
@@ -110,38 +97,32 @@ export function Hero({
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
           <m.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="space-y-8"
           >
            
            {/* Headline */}
-            <m.h1
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ delay: 0.3 }}
+            <h1
               className="font-serif text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl"
             >
               <span className="text-balance">Transforming Restaurant Ideas Into</span>{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Profitable Businesses
               </span>
-            </m.h1>
+            </h1>
 
              {/* Subheadline */}
-            <m.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+            <p
               className="max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl"
             >
               End-to-end restaurant consultancy for cafes, restaurants, cloud kitchens, 
               bakeries, resorts & hospitality ventures across India.
-            </m.p>
+            </p>
 
-              <m.form
+              <form
               onSubmit={handleSearch}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45 }}
               className="space-y-3"
             >
               <div className="relative max-w-xl">
@@ -164,12 +145,9 @@ export function Hero({
               <p className="text-sm text-muted-foreground">
                 {searchFeedback || "Search site sections like Services, About, Portfolio, Process, Testimonials, Contact."}
               </p>
-            </m.form>
+            </form>
             {/* CTA Buttons */}
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+            <div
               className="flex flex-wrap gap-4"
             >
                <Button
@@ -203,30 +181,24 @@ export function Hero({
                   Chat on WhatsApp
                 </Link>
               </Button>
-            </m.div>
+            </div>
 
              {/* Trust Badges */}
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+            <div
               className="grid grid-cols-2 gap-3"
             >
-              {trustBadges.map((badge, index) => (
-                <m.div
+              {trustBadges.map((badge) => (
+                <div
                   key={badge.text}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
                   className="glass flex items-center gap-3 rounded-xl p-3 transition-all hover:shadow-lg"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                     <badge.icon className="h-5 w-5 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-foreground">{badge.text}</span>
-                </m.div>
+                </div>
               ))}
-            </m.div>
+            </div>
           </m.div>
 
             {/* Right Content - Image Grid */}
@@ -238,7 +210,7 @@ export function Hero({
           >
             <div className="grid grid-cols-2 gap-4">
               {/* Main Image */}
-              <m.div
+              <div
                 className="col-span-2 overflow-hidden rounded-2xl shadow-2xl"
               >
                 <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
@@ -253,10 +225,10 @@ export function Hero({
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
               </div>
-              </m.div>
+              </div>
 
               {/* Secondary Images */}
-              <m.div
+              <div
                 className="overflow-hidden rounded-xl shadow-xl"
               >
                 <div className="relative aspect-square overflow-hidden rounded-xl">
@@ -269,9 +241,9 @@ export function Hero({
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
               </div>
-              </m.div>
+              </div>
 
-              <m.div
+              <div
                 className="overflow-hidden rounded-xl shadow-xl"
               >
                 <div className="relative aspect-square overflow-hidden rounded-xl">
@@ -285,14 +257,12 @@ export function Hero({
 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
               </div>
-              </m.div>
+              </div>
             </div>
 
             {/* Floating Stats Card */}
-            <m.div
+            <div
               className="glass absolute -bottom-6 -left-6 rounded-2xl p-4 shadow-xl"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
@@ -303,7 +273,7 @@ export function Hero({
                   <p className="text-xs text-muted-foreground">Projects Completed</p>
                 </div>
               </div>
-            </m.div>
+            </div>
           </m.div>
         </div>
 
@@ -314,21 +284,17 @@ export function Hero({
           transition={{ delay: 1, duration: 0.8 }}
           className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
         >
-          {stats.map((stat, index) => (
-            <m.div
+          {stats.map((stat) => (
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + index * 0.1 }}
               className="rounded-2xl border border-border/50 bg-card/50 p-6 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-lg"
             >
-              <AnimatedCounter
-                value={stat.value}
-                suffix={stat.suffix}
-                className="text-3xl font-bold text-primary md:text-4xl"
-              />
+              <span className="block text-3xl font-bold text-primary md:text-4xl">
+                {stat.value}
+                {stat.suffix}
+              </span>
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
-            </m.div>
+            </div>
           ))}
         </m.div>
       </div>

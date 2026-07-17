@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -283,16 +283,10 @@ export function Portfolio() {
         </m.div>
 
         {/* Projects Grid */}
-        <m.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {displayedProjects.map((project, index) => (
-              <m.div
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {displayedProjects.map((project) => (
+              <div
                 key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
@@ -369,17 +363,13 @@ export function Portfolio() {
                     </div>
                   )}
                 </div>
-              </m.div>
+              </div>
             ))}
-          </AnimatePresence>
-        </m.div>
+        </div>
 
         {/* Show More Button */}
         {filteredProjects.length > 6 && (
-          <m.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <div
             className="mt-12 text-center"
           >
             <Button
@@ -391,7 +381,7 @@ export function Portfolio() {
               {showAll ? "Show Less" : `View All ${filteredProjects.length} Projects`}
               <ArrowRight className={`ml-2 h-4 w-4 transition-transform ${showAll ? "rotate-90" : "group-hover:translate-x-1"}`} />
             </Button>
-          </m.div>
+          </div>
         )}
       </div>
     </section>

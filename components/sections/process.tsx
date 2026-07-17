@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { m } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import { 
   MessageSquare, 
   Search, 
@@ -102,7 +100,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <m.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -119,7 +117,7 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
             A systematic, proven approach to transform your hospitality vision 
             into a successful, profitable business.
           </p>
-        </m.div>
+        </MotionDiv>
         
         {/* Process Steps */}
         <div className="relative">
@@ -128,21 +126,16 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
 
           <div className="space-y-8 lg:space-y-0">
             {steps.map((step, index) => (
-              <m.div
+              <div
                 key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative flex flex-col lg:flex-row lg:items-center ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
                 {/* Content Card */}
                 <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:pr-8 lg:text-right" : "lg:pl-8"}`}>
-                  <m.div
-                    whileHover={{ scale: 1.02 }}
-                     className="group rounded-2xl border border-border/50 bg-background/80 backdrop-blur-md p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
+                  <div
+                     className="group rounded-2xl border border-border/50 bg-background/80 backdrop-blur-md p-6 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-xl"
                   >
                     {/* Mobile Icon */}
                     <div className="mb-4 flex items-center gap-4 lg:hidden">
@@ -185,22 +178,21 @@ export function Process({ processImage = "/images/herologo/processlogo.png" }: P
                     <p className={`mt-3 text-muted-foreground ${index % 2 === 0 ? "lg:text-right" : ""}`}>
                       {step.description}
                     </p>
-                  </m.div>
+                  </div>
                 </div>
 
                 {/* Center Icon - Desktop */}
                 <div className="relative z-10 hidden lg:flex lg:w-20 lg:justify-center">
-                  <m.div
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/30"
+                  <div
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/30 transition-transform duration-300 hover:rotate-[10deg] hover:scale-110"
                   >
                     <step.icon className="h-6 w-6 text-white" />
-                  </m.div>
+                  </div>
                 </div>
 
                 {/* Spacer for alternating layout */}
                 <div className="hidden lg:block lg:w-[calc(50%-40px)]" />
-              </m.div>
+              </div>
             ))}
           </div>
         </div>

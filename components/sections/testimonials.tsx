@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -40,14 +40,15 @@ const testimonials = [
 export function Testimonials({ backgroundImage = "/images/herologo/testimoniallogo.png" }: TestimonialsProps) {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || shouldReduceMotion) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, shouldReduceMotion]);
 
   const next = () => {
     setIsAutoPlaying(false);
@@ -72,15 +73,11 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      <m.div
+      <div
         className="absolute left-10 top-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 6, repeat: Infinity }}
       />
-      <m.div
+      <div
         className="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-secondary/30 blur-3xl"
-        animate={{ scale: [1.2, 1, 1.2] }}
-        transition={{ duration: 8, repeat: Infinity }}
       />
 
       <div className="container relative z-10 mx-auto px-4">

@@ -1,8 +1,5 @@
-"use client";
-
-import { useRef } from "react";
 import Image from "next/image";
-import { m, useInView } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 
 const logos = [
   {
@@ -85,17 +82,14 @@ const partners = [
 ];
 
 export function Clients() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
     <section className="relative overflow-hidden bg-muted/30 py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <m.div
-          ref={ref}
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
@@ -108,7 +102,7 @@ export function Clients() {
           <p className="mx-auto max-w-2xl text-muted-foreground">
             We have  had the privilege of working with amazing hospitality brands and industry partners across India.
           </p>
-        </m.div>
+        </MotionDiv>
 
         {/* Logo Marquee */}
         <div className="relative mb-12 overflow-hidden">
@@ -142,7 +136,7 @@ export function Clients() {
         </div>
 
         {/* Partners Grid */}
-<m.div
+<MotionDiv
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
@@ -175,7 +169,7 @@ export function Clients() {
       </div>
     ))}
   </div>
-</m.div>
+</MotionDiv>
       </div>
     </section>
   );

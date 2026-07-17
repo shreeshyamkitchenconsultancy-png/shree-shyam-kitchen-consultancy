@@ -1,6 +1,4 @@
-"use client";
-
-import { m } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import Image from "next/image"
 import Link from "next/link";
 import { 
@@ -10,10 +8,9 @@ import {
   Instagram, 
   Facebook, 
   MessageCircle,
-  Clock,
-  ArrowUp
+  Clock
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ScrollToTopButton } from "@/components/ui/scroll-to-top-button";
 
 const quickLinks = [
   { href: "#services", label: "Our Services" },
@@ -40,22 +37,18 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="relative bg-foreground text-background">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"
+        >
           {/* Brand Column */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <Link href="#top" className="flex items-center gap-3">
   <div className="relative h-12 w-12 sm:h-16 sm:w-16 overflow-hidden rounded-xl flex-shrink-0">
     <Image
@@ -84,15 +77,10 @@ export function Footer() {
             <p className="text-sm italic text-background/50">
               &quot;Designed For Hospitality Growth & Operational Excellence&quot;
             </p>
-          </m.div>
+          </div>
 
           {/* Quick Links */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
+          <div>
             <h4 className="mb-6 text-lg font-semibold text-background">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -106,15 +94,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </m.div>
+          </div>
 
           {/* Services */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
+          <div>
             <h4 className="mb-6 text-lg font-semibold text-background">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
@@ -128,15 +111,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </m.div>
+          </div>
 
           {/* Contact Info */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
+          <div>
             <h4 className="mb-6 text-lg font-semibold text-background">Contact Us</h4>
             <ul className="space-y-4">
               <li>
@@ -182,8 +160,8 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-          </m.div>
-        </div>
+          </div>
+        </MotionDiv>
       </div>
 
       {/* Bottom Bar */}
@@ -192,15 +170,7 @@ export function Footer() {
           <p className="text-sm text-background/60">
             © {new Date().getFullYear()} Shree Shyam Kitchen Consultancy. All rights reserved.
           </p>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={scrollToTop}
-            className="rounded-full bg-background/10 text-background hover:bg-primary hover:text-primary-foreground"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="h-5 w-5" />
-          </Button>
+          <ScrollToTopButton />
         </div>
       </div>
     </footer>

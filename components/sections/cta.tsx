@@ -1,6 +1,4 @@
-"use client";
-
-import { m } from "framer-motion";
+import { MotionDiv } from "@/components/ui/motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, MessageCircle, Phone, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -10,15 +8,11 @@ export function CTA() {
     <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-secondary py-24">
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0">
-      <m.div
+      <div
           className="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity }}
       />
-      <m.div
+      <div
           className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.3, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity }}
       />
       </div>
 
@@ -33,13 +27,14 @@ export function CTA() {
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="mx-auto max-w-4xl text-center">
-        <m.div
+        <MotionDiv
+            className="mx-auto max-w-4xl text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+          <div>
             <h2 className="mb-6 font-serif text-3xl font-bold text-white md:text-4xl lg:text-5xl">
               <span className="text-balance">Start Your Restaurant Success Journey Today</span>
             </h2>
@@ -47,13 +42,9 @@ export function CTA() {
               Book a free consultation with our hospitality experts and take the first step 
               towards building a profitable hospitality business.
             </p>
-        </m.div>
+          </div>
 
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button
@@ -98,14 +89,10 @@ export function CTA() {
                 Call Now
               </Link>
             </Button>
-          </m.div>
+          </div>
 
           {/* Trust indicators */}
-          <m.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+          <div
             className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-white/80"
           >
             <div className="flex items-center gap-2">
@@ -124,8 +111,8 @@ export function CTA() {
               <div className="h-2 w-2 rounded-full bg-white/60" />
               Pan India Service
             </div>
-          </m.div>
-        </div>
+          </div>
+        </MotionDiv>
       </div>
     </section>
   );
