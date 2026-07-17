@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
@@ -31,10 +30,7 @@ export function Header() {
 
   return (
     <>
-      <m.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+      <header
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
           isScrolled ? "glass border-b border-border/50 py-1 shadow-lg" : "bg-transparent py-2"
         }`}
@@ -106,17 +102,11 @@ export function Header() {
             )}
           </Button>
         </div>
-      </m.header>
+      </header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <m.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-16 z-40 glass border-b border-border/50 p-6 shadow-xl lg:hidden"
-          >
+      {isMobileMenuOpen && (
+          <div className="fixed inset-x-0 top-16 z-40 glass border-b border-border/50 p-6 shadow-xl lg:hidden">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -146,9 +136,8 @@ export function Header() {
                 </Button>
               </div>
             </nav>
-          </m.div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   );
 }

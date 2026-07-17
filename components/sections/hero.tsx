@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, FormEvent } from "react";
-import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -96,12 +95,7 @@ export function Hero({
       <div className="container relative z-10 mx-auto px-4 pb-16 pt-24 lg:pt-32">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content */}
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
            
            {/* Headline */}
             <h1
@@ -199,15 +193,10 @@ export function Hero({
                 </div>
               ))}
             </div>
-          </m.div>
+          </div>
 
             {/* Right Content - Image Grid */}
-          <m.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               {/* Main Image */}
               <div
@@ -274,16 +263,11 @@ export function Hero({
                 </div>
               </div>
             </div>
-          </m.div>
+          </div>
         </div>
 
         {/* Animated Stats Section */}
-        <m.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3"
-        >
+        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -296,7 +280,7 @@ export function Hero({
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}
-        </m.div>
+        </div>
       </div>
     </section>
   );
