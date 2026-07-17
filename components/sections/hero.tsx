@@ -5,6 +5,7 @@ import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 import { 
   Calendar, 
   FolderOpen, 
@@ -273,10 +274,12 @@ export function Hero({
               key={stat.label}
               className="rounded-2xl border border-border/50 bg-card/50 p-6 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-lg"
             >
-              <span className="block text-3xl font-bold text-primary md:text-4xl">
-                {stat.value}
-                {stat.suffix}
-              </span>
+              <AnimatedNumber
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                className="block text-3xl font-bold text-primary md:text-4xl"
+              />
               <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}
