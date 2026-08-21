@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 interface Project {
   id: number;
@@ -15,6 +16,7 @@ interface Project {
   description: string;
   featured: boolean;
   image?: string;
+  href?: string;
 }
 
 const projects: Project[] = [
@@ -100,6 +102,7 @@ const projects: Project[] = [
     category: "QSR",
     cuisine: "Italian",
     image: "/images/portfolio/pizzafresca.jpg",
+    href: "/portfolio/pizza-fresca",
     services: [
       "Italian menu engineering",
       "Kitchen setup & design",
@@ -289,9 +292,21 @@ export function Portfolio() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-0 flex items-end p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <Button size="sm" className="bg-primary text-primary-foreground">
-                      View Details <ExternalLink className="ml-2 h-4 w-4" />
+                  <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+                    <Button
+                      asChild={Boolean(project.href)}
+                      size="sm"
+                      className="bg-primary text-primary-foreground"
+                    >
+                      {project.href ? (
+                        <Link href={project.href}>
+                          View Case Study <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
+                      ) : (
+                        <span>
+                          View Details <ExternalLink className="ml-2 h-4 w-4" />
+                        </span>
+                      )}
                     </Button>
                   </div>
                   <Badge className="absolute right-4 top-4 bg-background/90 text-foreground">

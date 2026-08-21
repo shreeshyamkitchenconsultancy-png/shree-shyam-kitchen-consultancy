@@ -207,3 +207,20 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+@media print {
+  .pizza-layout-card {
+    break-inside: avoid;
+  }
+
+  .pizza-layout-scroll {
+    overflow: visible !important;
+  }
+
+  .pizza-layout-preview {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: 8400 / 2175;
+  }
+}

@@ -8,5 +8,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1,
     },
+    {
+      url: 'https://shreeshyamkitchenconsultancy.com/blog/commercial-kitchen-design-guide',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://shreeshyamkitchenconsultancy.com/portfolio/pizza-fresca',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }
