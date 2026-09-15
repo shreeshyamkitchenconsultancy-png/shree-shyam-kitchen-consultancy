@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { AnimatedNumber } from "@/components/ui/animated-number";
 import { Utensils, Clock, MapPin, Award } from "lucide-react";
 
 const stats = [
@@ -86,12 +85,7 @@ export function Stats() {
               </div>
 
               {/* Counter */}
-              <AnimatedNumber
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-                className="mb-2 block text-4xl font-bold text-background md:text-5xl"
-              />
+              <span className="mb-2 block text-4xl font-bold text-background md:text-5xl" aria-label={`${stat.value}${stat.suffix} ${stat.label}`}>{stat.value}{stat.suffix}</span>
 
               {/* Label */}
               <h3 className="mb-2 text-lg font-semibold text-background">
