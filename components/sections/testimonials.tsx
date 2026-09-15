@@ -186,6 +186,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
             <Button
               variant="outline"
               size="icon"
+              aria-label="Previous testimonial"
               onClick={prev}
               className="rounded-full border-background/20 bg-transparent text-background hover:bg-background/10"
             >
@@ -197,6 +198,8 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
               {testimonials.map((_, index) => (
                 <button
                   key={index}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-current={index === current ? "true" : undefined}
                   onClick={() => {
                     setIsAutoPlaying(false);
                     updateCurrent(index);
@@ -213,6 +216,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
             <Button
               variant="outline"
               size="icon"
+              aria-label="Next testimonial"
               onClick={next}
               className="rounded-full border-background/20 bg-transparent text-background hover:bg-background/10"
             >
