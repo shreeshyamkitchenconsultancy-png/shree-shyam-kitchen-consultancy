@@ -1,10 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { 
   Calendar, 
@@ -13,8 +10,7 @@ import {
   Award, 
   MapPin, 
   Utensils, 
-  CheckCircle2, 
-  Search 
+  CheckCircle2
 } from "lucide-react";
 import Link from "next/link";
 
@@ -37,49 +33,11 @@ const stats = [
   { value: 100, suffix: "%", label: "Client Satisfaction" },
 ];
 
-const searchTargets = [
-  { label: "Services", href: "#services", aliases: ["services", "service", "offerings", "consulting"] },
-  { label: "About", href: "#about", aliases: ["about", "founder", "story"] },
-  { label: "Portfolio", href: "#portfolio", aliases: ["portfolio", "projects", "work"] },
-  { label: "Process", href: "#process", aliases: ["process", "workflow", "how we work"] },
-  { label: "Testimonials", href: "#testimonials", aliases: ["testimonials", "reviews", "clients"] },
-  { label: "Contact", href: "#contact", aliases: ["contact", "book", "consultation"] },
-];
-
 export function Hero({
   heroMain = "/images/herologo/heromainlogo.png",
   heroSecondaryOne = "/images/herologo/kitchenlayout1.png",
   heroSecondaryTwo = "/images/herologo/hero2logo.png",
 }: HeroProps) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchFeedback, setSearchFeedback] = useState("");
-
-  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const trimmed = searchQuery.trim().toLowerCase();
-
-    if (!trimmed) {
-      setSearchFeedback("Type a section name like Services, Portfolio, or Contact.");
-      return;
-    }
-
-    const match = searchTargets.find((target) =>
-      target.label.toLowerCase().includes(trimmed) ||
-      target.aliases.some((alias) => alias.includes(trimmed))
-    );
-
-    if (match) {
-      const element = document.querySelector(match.href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        window.history.replaceState(null, "", match.href);
-      }
-      setSearchFeedback(`Navigating to ${match.label}...`);
-      return;
-    }
-
-    setSearchFeedback("No match found. Try Services, Portfolio, Process, Testimonials, About, or Contact.");
-  };
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-accent/20">
@@ -115,32 +73,6 @@ export function Hero({
               End-to-end restaurant consultancy for cafes, restaurants, cloud kitchens, 
               bakeries, resorts & hospitality ventures across India.
             </p>
-
-              <form
-              onSubmit={handleSearch}
-              className="space-y-3"
-            >
-              <div className="relative max-w-xl">
-                <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  value={searchQuery}
-                  onChange={(event) => setSearchQuery(event.target.value)}
-                  placeholder="Search sections: Services, Portfolio, Contact..."
-                  className="pl-11 pr-28"
-                  aria-label="Search website sections"
-                />
-                  <Button
-                  type="submit"
-                  size="sm"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-primary-foreground hover:bg-primary/90"
-                >
-                  Search
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                {searchFeedback || "Search site sections like Services, About, Portfolio, Process, Testimonials, Contact."}
-              </p>
-            </form>
             {/* CTA Buttons */}
             <div
               className="flex flex-wrap gap-4"
