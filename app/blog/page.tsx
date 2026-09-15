@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { CTA } from "@/components/sections/cta";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Restaurant Consultancy Insights | Shree Shyam Kitchen Consultancy",
+  description: "Practical guides on restaurant setup, cafe and cloud-kitchen planning, menu engineering, food costing, staffing and operations.",
+  alternates: { canonical: "/blog" },
+};
 
 export default function BlogPage() {
   return (
