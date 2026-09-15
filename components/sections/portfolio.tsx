@@ -265,6 +265,7 @@ export function Portfolio() {
               variant={activeCategory === category ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveCategory(category)}
+              aria-pressed={activeCategory === category}
               className={`rounded-full transition-all ${
                 activeCategory === category
                   ? "bg-primary text-primary-foreground shadow-lg"
@@ -353,6 +354,8 @@ export function Portfolio() {
                         {project.services.length > 3 && (
                           <button
                             onClick={() => toggleServiceExpansion(project.id)}
+                            aria-expanded={expandedServices.has(project.id)}
+                            aria-label={expandedServices.has(project.id) ? `Show fewer services for ${project.name}` : `Show all services for ${project.name}`}
                             className="inline-flex items-center"
                           >
                             <Badge 
