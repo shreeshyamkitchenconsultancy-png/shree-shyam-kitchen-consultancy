@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 export function BlogImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="my-10">
-      <img
+    <div className="relative my-10 h-[350px] w-full overflow-hidden rounded-xl">
+      <Image
         src={src}
         alt={alt}
-        className="w-full h-[350px] object-cover rounded-xl"
+        fill
+        sizes="(max-width: 768px) 100vw, 1152px"
+        className="object-cover"
       />
     </div>
   );
