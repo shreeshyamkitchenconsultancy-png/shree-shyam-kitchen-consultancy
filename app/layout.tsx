@@ -6,6 +6,7 @@ import { Montserrat, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Header } from "@/components/sections/header";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { ClickTracker } from "@/components/analytics/click-tracker";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -21,12 +22,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shreeshyamkitchenconsultancy.com"),
-
-  alternates: {
-    canonical: "/",
-  },
-  title: 'Shree Shyam Kitchen Consultancy | Restaurant & Kitchen Consulting Experts',
-  description: 'End-to-end restaurant consultancy for cafes, restaurants, cloud kitchens, bakeries, resorts & hospitality ventures across India. 10+ years experience, 15+ projects delivered.',
+  title: 'Restaurant Consultant Jaipur | Shree Shyam Kitchen Consultancy',
+  description: 'Chef-led restaurant consultancy in Jaipur for cafes, QSRs, cloud kitchens and restaurants: kitchen planning, menu, costing, recipes, training and launch support.',
   keywords: 'restaurant consultancy, restaurant consultant Jaipur, kitchen design consultancy, cloud kitchen setup, cafe consultancy, menu engineering, restaurant operations consultancy, hospitality consultancy India',
   authors: [{ name: 'Shree Shyam Kitchen Consultancy' }],
   creator: 'Shree Shyam Kitchen Consultancy',
@@ -63,12 +60,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "FoodService"],
+    name: "Shree Shyam Kitchen Consultancy",
+    url: "https://shreeshyamkitchenconsultancy.com",
+    telephone: "+91-78209-42754",
+    email: "shreeshyamkitchenconsultancy@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Jaipur",
+      addressRegion: "Rajasthan",
+      addressCountry: "IN",
+    },
+    areaServed: ["Jaipur", "Rajasthan", "India"],
+    founder: {
+      "@type": "Person",
+      name: "Ravindra Shekhawat",
+    },
+    serviceType: [
+      "Restaurant Consultancy",
+      "Cafe Setup Consultancy",
+      "Cloud Kitchen Setup",
+      "QSR Setup",
+      "Commercial Kitchen Planning",
+      "Menu Engineering",
+      "Recipe Standardisation",
+      "Food Costing",
+      "Staff Training",
+    ],
+  };
+
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased">
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+  />
   <Header />
   
   <WhatsAppButton />
+  <ClickTracker />
   
   {children}
 
