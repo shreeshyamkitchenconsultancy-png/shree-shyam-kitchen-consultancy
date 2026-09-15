@@ -107,7 +107,7 @@ export function Testimonials({ backgroundImage = "/images/herologo/testimoniallo
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
-          alt="Hospitality testimonial visual"
+          alt=""
           fill
           className="object-cover brightness-75"
         />
