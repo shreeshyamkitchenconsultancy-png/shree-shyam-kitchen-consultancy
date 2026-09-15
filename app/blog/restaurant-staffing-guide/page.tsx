@@ -1,13 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogImage } from "@/components/blog/BlogImage";
 import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
 
-export const metadata = {
+export const metadata: Metadata = {
   title:
     "How Many Staff Does Your Restaurant Actually Need? | Staffing Guide Jaipur 2026",
   description:
     "A practical staffing model for restaurant owners, café operators and QSR founders in Jaipur. Learn how to control labour cost, eliminate overstaffing and build a role-based production system.",
+  alternates: { canonical: "/blog/restaurant-staffing-guide" },
 };
 
 export default function ArticlePage() {
