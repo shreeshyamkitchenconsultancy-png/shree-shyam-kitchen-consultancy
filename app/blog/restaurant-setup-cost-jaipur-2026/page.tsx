@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogImage } from "@/components/blog/BlogImage";
 import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
-export const metadata = {
+export const metadata: Metadata = {
   title:
     "Restaurant Setup Cost in Jaipur (2026) | Complete Investment Guide",
   description:
     "Discover the actual cost of opening a restaurant in Jaipur in 2026. Detailed investment breakdown for cafes, cloud kitchens, QSRs and casual dining restaurants.",
+  alternates: { canonical: "/blog/restaurant-setup-cost-jaipur-2026" },
 };
 
 export default function ArticlePage() {
