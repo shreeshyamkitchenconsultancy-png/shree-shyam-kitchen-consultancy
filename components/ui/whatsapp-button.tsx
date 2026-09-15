@@ -10,15 +10,6 @@ export function WhatsAppButton() {
   href="https://wa.me/917820942754"
   target="_blank"
   rel="noopener noreferrer"
-  onClick={() => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag('event', 'generate_lead', {
-      method: 'whatsapp',
-      page_path: window.location.pathname,
-      page_title: document.title
-    });
-  }
-}}
   className="group flex items-center gap-3"
 >
         {/* Tooltip */}

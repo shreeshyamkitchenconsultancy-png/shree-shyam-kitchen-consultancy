@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogImage } from "@/components/blog/BlogImage";
 import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
-export const metadata = {
+export const metadata: Metadata = {
   title:
     "Restaurant Consultant in Jaipur | Complete Guide to Opening a Profitable Restaurant in 2026",
   description:
     "Learn restaurant setup, kitchen design, menu engineering, staffing and profitability strategies from restaurant consultants in Jaipur.",
+  alternates: { canonical: "/blog/restaurant-consultant-jaipur-guide" },
 };
 
 export default function ArticlePage() {

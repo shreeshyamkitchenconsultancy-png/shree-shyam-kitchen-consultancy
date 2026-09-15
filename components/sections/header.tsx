@@ -48,7 +48,7 @@ export function Header() {
 />
             </div>
             <div className="hidden sm:flex sm:flex-col items-center text-center">
-              <h1 className="font-serif text-xl sm:text-2xl font-bold text-foreground uppercase leading-tight">SHREE SHYAM</h1>
+              <div className="font-serif text-xl sm:text-2xl font-bold text-foreground uppercase leading-tight">SHREE SHYAM</div>
               <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wide">KITCHEN CONSULTANCY</p>
             </div>
           </Link>
