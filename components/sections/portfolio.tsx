@@ -208,7 +208,7 @@ import { PortfolioControls } from "@/components/sections/portfolio-controls";
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="relative overflow-hidden bg-background py-24">
+    <section id="portfolio" className="content-auto relative overflow-hidden bg-background py-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-20 right-0 h-[400px] w-[400px] translate-x-1/2 rounded-full bg-secondary/5 blur-3xl" />
@@ -216,7 +216,7 @@ export function Portfolio() {
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-[#8F2400]">
             Our Portfolio
           </span>
           <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
