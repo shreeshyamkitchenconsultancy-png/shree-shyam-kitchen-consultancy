@@ -1,10 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 interface Project {
@@ -207,42 +203,19 @@ const projects: Project[] = [
   },
 ];
 
-const categories = ["All", "Restaurant", "Cafe", "Cloud Kitchen", "QSR"];
+
+import { PortfolioControls } from "@/components/sections/portfolio-controls";
 
 export function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [showAll, setShowAll] = useState(false);
-  const [expandedServices, setExpandedServices] = useState<Set<number>>(new Set());
-
-  const filteredProjects = projects.filter(
-    (project) => activeCategory === "All" || project.category === activeCategory
-  );
-
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
-
-  const toggleServiceExpansion = (projectId: number) => {
-    const newExpanded = new Set(expandedServices);
-    if (newExpanded.has(projectId)) {
-      newExpanded.delete(projectId);
-    } else {
-      newExpanded.add(projectId);
-    }
-    setExpandedServices(newExpanded);
-  };
-
   return (
     <section id="portfolio" className="relative overflow-hidden bg-background py-24">
-      {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-20 right-0 h-[400px] w-[400px] translate-x-1/2 rounded-full bg-secondary/5 blur-3xl" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        {/* Header */}
-        <div
-          className="mx-auto mb-12 max-w-3xl text-center"
-        >
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
             Our Portfolio
           </span>
@@ -250,148 +223,97 @@ export function Portfolio() {
             <span className="text-balance">Projects & Success Stories</span>
           </h2>
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-            Explore our diverse portfolio of hospitality projects delivered across India, 
+            Explore our diverse portfolio of hospitality projects delivered across India,
             from fine dining restaurants to cloud kitchens.
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div
-          className="mb-12 flex flex-wrap justify-center gap-3"
-        >
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(category)}
-              aria-pressed={activeCategory === category}
-              className={`rounded-full transition-all ${
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "hover:bg-primary/10 hover:text-primary"
-              }`}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+        <PortfolioControls />
 
-        {/* Projects Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {displayedProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
-                  <Image
-                    src={project.image ?? "/images/portfolio/bamboonation2.png"}
-                    alt={project.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
-                    <Button
-                      asChild={Boolean(project.href)}
-                      size="sm"
-                      className="bg-primary text-primary-foreground"
+          {projects.map((project, index) => (
+            <article
+              key={project.id}
+              data-portfolio-card
+              data-category={project.category}
+              hidden={index >= 6}
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
+                <Image
+                  src={project.image ?? "/images/portfolio/bamboonation2.png"}
+                  alt={project.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+                  {project.href ? (
+                    <Link
+                      href={project.href}
+                      className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
                     >
-                      {project.href ? (
-                        <Link href={project.href}>
-                          View Case Study <ExternalLink className="ml-2 h-4 w-4" />
-                        </Link>
-                      ) : (
-                        <span>
-                          View Details <ExternalLink className="ml-2 h-4 w-4" />
-                        </span>
-                      )}
-                    </Button>
-                  </div>
-                  <Badge className="absolute right-4 top-4 bg-background/90 text-foreground">
-                    {project.category}
+                      View Case Study <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
+                  ) : (
+                    <span className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
+                      View Details <ExternalLink className="ml-2 h-4 w-4" />
+                    </span>
+                  )}
+                </div>
+                <Badge className="absolute right-4 top-4 bg-background/90 text-foreground">
+                  {project.category}
+                </Badge>
+              </div>
+
+              <div className="p-6">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
+                  <Badge variant="outline" className="text-xs">
+                    {project.cuisine}
                   </Badge>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <div className="mb-3 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
-                    <Badge variant="outline" className="text-xs">
-                      {project.cuisine}
-                    </Badge>
-                  </div>
-                  <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
-                    {project.description}
-                  </p>
-                  {project.featured && (
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                        Services Delivered:
-                      </p>
-                      <div className="flex flex-wrap gap-1">
-                        {expandedServices.has(project.id)
-                          ? project.services.map((service) => (
-                              <Badge
-                                key={service}
-                                variant="secondary"
-                                className="text-xs"
-                              >
-                                {service.length > 20 ? service.slice(0, 20) + "..." : service}
-                              </Badge>
-                            ))
-                          : project.services.slice(0, 3).map((service) => (
-                              <Badge
-                                key={service}
-                                variant="secondary"
-                                className="text-xs"
-                              >
-                                {service.length > 20 ? service.slice(0, 20) + "..." : service}
-                              </Badge>
-                            ))}
-                        {project.services.length > 3 && (
-                          <button
-                            onClick={() => toggleServiceExpansion(project.id)}
-                            aria-expanded={expandedServices.has(project.id)}
-                            aria-label={expandedServices.has(project.id) ? `Show fewer services for ${project.name}` : `Show all services for ${project.name}`}
-                            className="inline-flex items-center"
-                          >
-                            <Badge 
-                              variant="secondary" 
-                              className="cursor-pointer text-xs hover:bg-secondary/80 transition-colors"
-                            >
-                              {expandedServices.has(project.id)
-                                ? "Show Less"
-                                : `+${project.services.length - 3} more`}
-                            </Badge>
-                          </button>
-                        )}
-                      </div>
+                <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+
+                {project.featured && (
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                      Services Delivered:
+                    </p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.services.slice(0, 3).map((service) => (
+                        <Badge key={service} variant="secondary" className="text-xs">
+                          {service.length > 20 ? service.slice(0, 20) + "..." : service}
+                        </Badge>
+                      ))}
                     </div>
-                  )}
-                </div>
+
+                    {project.services.length > 3 && (
+                      <details className="group/details">
+                        <summary className="mt-2 cursor-pointer list-none text-xs font-medium text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                          +{project.services.length - 3} more services
+                        </summary>
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {project.services.slice(3).map((service) => (
+                            <Badge key={service} variant="secondary" className="text-xs">
+                              {service.length > 20 ? service.slice(0, 20) + "..." : service}
+                            </Badge>
+                          ))}
+                        </div>
+                      </details>
+                    )}
+                  </div>
+                )}
               </div>
-            ))}
+            </article>
+          ))}
         </div>
 
-        {/* Show More Button */}
-        {filteredProjects.length > 6 && (
-          <div
-            className="mt-12 text-center"
-          >
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => setShowAll(!showAll)}
-              className="group border-2 px-8"
-            >
-              {showAll ? "Show Less" : `View All ${filteredProjects.length} Projects`}
-              <ArrowRight className={`ml-2 h-4 w-4 transition-transform ${showAll ? "rotate-90" : "group-hover:translate-x-1"}`} />
-            </Button>
-          </div>
-        )}
+        <div id="portfolio-show-more" className="mt-12 text-center" />
       </div>
     </section>
   );
