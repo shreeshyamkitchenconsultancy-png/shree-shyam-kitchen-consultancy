@@ -65,7 +65,7 @@ export function TestimonialsCarousel() {
     <div className="relative mx-auto max-w-4xl">
       <div className={`rounded-3xl border border-background/10 bg-background/5 p-8 backdrop-blur-sm transition-opacity duration-300 md:p-12 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
         <Quote className="mb-6 h-12 w-12 text-primary/50" aria-hidden="true" />
-        <div className="mb-6 flex gap-1" aria-label={`${item.rating} out of 5 stars`}>
+        <div className="mb-6 flex gap-1" role="img" aria-label={`${item.rating} out of 5 stars`}>
           {Array.from({ length: item.rating }).map((_, i) => (
             <Star key={i} className="h-5 w-5 fill-primary text-primary" aria-hidden="true" />
           ))}
