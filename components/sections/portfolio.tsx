@@ -278,7 +278,7 @@ export function Portfolio() {
                 </p>
 
                 {project.featured && (
-                  <div className="mt-auto space-y-3 pt-2">
+                  <div className="mt-4 space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                       Services Delivered:
                     </p>
@@ -294,8 +294,8 @@ export function Portfolio() {
                     </div>
 
                     {project.services.length > 3 && (
-                      <details className="group/details rounded-lg border border-border/60 bg-muted/30 px-3 py-2">
-                        <summary className="cursor-pointer list-none text-xs font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                      <details className="group/details">
+                        <summary className="inline-flex cursor-pointer list-none items-center rounded-md border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                           <span className="group-open/details:hidden">
                             View {project.services.length - 3} more services
                           </span>
