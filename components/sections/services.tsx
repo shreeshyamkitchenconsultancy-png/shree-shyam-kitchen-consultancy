@@ -56,7 +56,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative overflow-hidden bg-card py-24">
+    <section id="services" className="content-auto relative overflow-hidden bg-card py-24">
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
@@ -68,7 +68,7 @@ export function Services() {
         <div
           className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-[#8F2400]">
             Our Expert Services
           </span>
           <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
@@ -125,7 +125,7 @@ export function Services() {
               </a>
 
               {/* Service number */}
-              <span className="absolute right-4 top-4 font-serif text-5xl font-bold text-foreground/5">
+              <span aria-hidden="true" className="absolute right-4 top-4 font-serif text-5xl font-bold text-foreground/5">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>

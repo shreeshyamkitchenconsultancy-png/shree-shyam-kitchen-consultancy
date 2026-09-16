@@ -54,7 +54,7 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-muted/30 py-24">
+    <section className="content-auto relative overflow-hidden bg-muted/30 py-24">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
@@ -65,7 +65,7 @@ export function WhyChooseUs() {
         <div
           className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-[#8F2400]">
             Why Choose Us
           </span>
           <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
