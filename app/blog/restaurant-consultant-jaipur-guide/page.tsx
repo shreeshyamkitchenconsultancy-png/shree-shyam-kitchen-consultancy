@@ -4,11 +4,18 @@ import { BlogImage } from "@/components/blog/BlogImage";
 import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
 export const metadata: Metadata = {
-  title:
-    "Restaurant Consultant in Jaipur | Complete Guide to Opening a Profitable Restaurant in 2026",
+  title: "Restaurant Consultant Jaipur: Opening Guide 2026 | SSKC",
   description:
-    "Learn restaurant setup, kitchen design, menu engineering, staffing and profitability strategies from restaurant consultants in Jaipur.",
+    "Practical Jaipur restaurant setup guide covering kitchen planning, menu engineering, staffing, costing and profitability.",
   alternates: { canonical: "/blog/restaurant-consultant-jaipur-guide" },
+  openGraph: {
+    type: "article",
+    url: "https://shreeshyamkitchenconsultancy.com/blog/restaurant-consultant-jaipur-guide",
+    title: "Restaurant Consultant Jaipur: Opening Guide 2026 | SSKC",
+    description:
+      "Practical Jaipur restaurant setup guide covering kitchen planning, menu engineering, staffing, costing and profitability.",
+    images: [{ url: "/images/blog/blogimage1.png", alt: "Restaurant consultant Jaipur guide" }],
+  },
 };
 
 export default function ArticlePage() {
