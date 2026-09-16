@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,6 +11,11 @@ export function PortfolioControls() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [showAll, setShowAll] = useState(false);
   const [matchedCount, setMatchedCount] = useState(0);
+  const [showMoreTarget, setShowMoreTarget] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setShowMoreTarget(document.getElementById("portfolio-show-more"));
+  }, []);
 
   useEffect(() => {
     const section = document.getElementById("portfolio");
@@ -65,24 +71,25 @@ export function PortfolioControls() {
         ))}
       </div>
 
-      {matchedCount > 6 && (
-        <div className="mt-12 text-center">
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => setShowAll((value) => !value)}
-            aria-expanded={showAll}
-            className="group border-2 px-8"
-          >
-            {showAll ? "Show Less" : `View All ${matchedCount} Projects`}
-            <ArrowRight
-              className={`ml-2 h-4 w-4 transition-transform ${
-                showAll ? "rotate-90" : "group-hover:translate-x-1"
-              }`}
-            />
-          </Button>
-        </div>
-      )}
+      {showMoreTarget && matchedCount > 6
+        ? createPortal(
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAll((value) => !value)}
+              aria-expanded={showAll}
+              className="group border-2 px-8"
+            >
+              {showAll ? "Show Less" : `View All ${matchedCount} Projects`}
+              <ArrowRight
+                className={`ml-2 h-4 w-4 transition-transform ${
+                  showAll ? "rotate-90" : "group-hover:translate-x-1"
+                }`}
+              />
+            </Button>,
+            showMoreTarget
+          )
+        : null}
     </>
   );
 }
