@@ -19,7 +19,7 @@ export function WhatsAppButton() {
 
         {/* Button */}
         <div
-          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#08775F] text-white shadow-lg shadow-[#08775F]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#08775F]/40 active:scale-95"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#075E54] text-white shadow-lg shadow-[#075E54]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#075E54]/40 active:scale-95"
         >
           <svg
             viewBox="0 0 32 32"
