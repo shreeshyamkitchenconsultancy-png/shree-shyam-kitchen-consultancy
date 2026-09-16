@@ -4,9 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Restaurant Consultancy Insights | Shree Shyam Kitchen Consultancy",
+  title: "Restaurant Consultancy Insights | SSKC",
   description: "Practical guides on restaurant setup, cafe and cloud-kitchen planning, menu engineering, food costing, staffing and operations.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: "https://shreeshyamkitchenconsultancy.com/blog",
+    title: "Restaurant Consultancy Insights | SSKC",
+    description:
+      "Practical guides on restaurant setup, cafe and cloud-kitchen planning, menu engineering, food costing, staffing and operations.",
+  },
 };
 
 export default function BlogPage() {
