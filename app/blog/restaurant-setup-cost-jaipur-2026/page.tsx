@@ -575,7 +575,7 @@ export default function ArticlePage() {
   <div className="space-y-4">
 
     <Link
-  href="/services"
+  href="/#services"
   className="block rounded-xl border p-6 hover:bg-muted/20"
 >
   <h3 className="font-semibold">
@@ -584,7 +584,7 @@ export default function ArticlePage() {
 </Link>
 
     <Link
-  href="/about"
+  href="/#about"
       className="block rounded-xl border p-6 hover:bg-muted/20"
     >
       <h3 className="font-semibold">
@@ -593,7 +593,7 @@ export default function ArticlePage() {
     </Link>
 
     <Link
-  href="/contact"
+  href="/#contact"
       className="block rounded-xl border p-6 hover:bg-muted/20"
     >
       <h3 className="font-semibold">
