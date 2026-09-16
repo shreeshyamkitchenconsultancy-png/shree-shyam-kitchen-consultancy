@@ -230,14 +230,14 @@ export function Portfolio() {
 
         <PortfolioControls />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <article
               key={project.id}
               data-portfolio-card
               data-category={project.category}
               hidden={index >= 6}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
                 <Image
