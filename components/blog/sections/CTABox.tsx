@@ -12,7 +12,7 @@ export function CTABox() {
       </p>
 
       <Link
-        href="/contact"
+        href="/#contact"
         className="inline-block bg-white text-primary px-6 py-3 rounded-lg font-medium"
       >
         Book Consultation
