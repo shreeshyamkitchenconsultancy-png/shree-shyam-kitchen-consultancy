@@ -12,12 +12,12 @@ import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
 
 export const metadata: Metadata = {
-  title: "Restaurant Consultant Jaipur | Shree Shyam Kitchen Consultancy",
+  title: "Restaurant Consultant Jaipur | Shree Shyam Kitchen",
   description:
-    "Chef-led restaurant consultancy in Jaipur for cafes, QSRs, cloud kitchens and restaurants: kitchen planning, menu, costing, recipes, training and launch support.",
+    "Chef-led restaurant consultancy in Jaipur for cafes, QSRs, cloud kitchens and restaurants: kitchen planning, menu, costing, training and launch support.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Restaurant Consultant Jaipur | Shree Shyam Kitchen Consultancy",
+    title: "Restaurant Consultant Jaipur | Shree Shyam Kitchen",
     description:
       "Kitchen planning, menu engineering, food costing, recipe standardisation, staff training and launch support for food businesses.",
     url: "https://shreeshyamkitchenconsultancy.com/",

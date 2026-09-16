@@ -4,11 +4,18 @@ import { BlogImage } from "@/components/blog/BlogImage";
 import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
 export const metadata: Metadata = {
-  title:
-    "Restaurant Setup Cost in Jaipur (2026) | Complete Investment Guide",
+  title: "Restaurant Setup Cost Jaipur 2026 | Investment Guide",
   description:
-    "Discover the actual cost of opening a restaurant in Jaipur in 2026. Detailed investment breakdown for cafes, cloud kitchens, QSRs and casual dining restaurants.",
+    "Jaipur restaurant setup cost guide for cafes, cloud kitchens, QSRs and casual dining, with practical investment breakdowns for 2026.",
   alternates: { canonical: "/blog/restaurant-setup-cost-jaipur-2026" },
+  openGraph: {
+    type: "article",
+    url: "https://shreeshyamkitchenconsultancy.com/blog/restaurant-setup-cost-jaipur-2026",
+    title: "Restaurant Setup Cost Jaipur 2026 | Investment Guide",
+    description:
+      "Jaipur restaurant setup cost guide for cafes, cloud kitchens, QSRs and casual dining, with practical investment breakdowns for 2026.",
+    images: [{ url: "/images/blog/blogimage2.png", alt: "Restaurant setup cost Jaipur guide" }],
+  },
 };
 
 export default function ArticlePage() {
