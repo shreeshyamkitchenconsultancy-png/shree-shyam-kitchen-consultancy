@@ -296,7 +296,12 @@ export function Portfolio() {
                     {project.services.length > 3 && (
                       <details className="group/details rounded-lg border border-border/60 bg-muted/30 px-3 py-2">
                         <summary className="cursor-pointer list-none text-xs font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-                          View {project.services.length - 3} more services
+                          <span className="group-open/details:hidden">
+                            View {project.services.length - 3} more services
+                          </span>
+                          <span className="hidden group-open/details:inline">
+                            Show fewer services
+                          </span>
                         </summary>
                         <ul className="mt-3 space-y-2 text-xs leading-relaxed text-muted-foreground">
                           {project.services.slice(3).map((service) => (
