@@ -61,7 +61,7 @@ export function CTA() {
             <Button
               asChild
               size="lg"
-              className="bg-[#25D366] px-8 text-white shadow-xl transition-all hover:bg-[#128C7E] hover:shadow-2xl"
+              className="bg-[#075E54] px-8 text-white shadow-xl transition-all hover:bg-[#06483F] hover:shadow-2xl"
             >
               <Link
                 href="https://wa.me/917820942754"
