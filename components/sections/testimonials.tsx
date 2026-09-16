@@ -14,7 +14,7 @@ export function Testimonials({
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
-          alt=""
+          alt="Restaurant consultancy client testimonials"
           fill
           sizes="100vw"
           className="object-cover brightness-75"
