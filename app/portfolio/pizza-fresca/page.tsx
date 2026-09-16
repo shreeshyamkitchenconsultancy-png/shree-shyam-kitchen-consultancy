@@ -11,7 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const title = "Pizza Fresca Case Study | Shree Shyam Kitchen Consultancy";
 const description =
-  "See how Shree Shyam Kitchen Consultancy supported Pizza Fresca with commercial kitchen planning, menu development, recipe standardisation, food costing, inventory systems, staff training and online-delivery support.";
+  "Pizza Fresca case study: kitchen planning, menu development, recipe standardisation, food costing, inventory systems and staff training by SSKC.";
 const url = "https://shreeshyamkitchenconsultancy.com/portfolio/pizza-fresca";
 const heroImage =
   "https://shreeshyamkitchenconsultancy.com/images/projects/pizza-fresca/optimized/tandoori-paneer-pizza.jpg";
