@@ -237,7 +237,7 @@ export function Portfolio() {
               data-portfolio-card
               data-category={project.category}
               hidden={index >= 6}
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5">
                 <Image
@@ -247,25 +247,27 @@ export function Portfolio() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
-                {project.href && (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
-                      <Link
-                        href={project.href}
-                        className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground shadow-sm"
-                      >
-                        View Case Study <ExternalLink className="ml-2 h-4 w-4" />
-                      </Link>
-                    </div>
-                  </>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 flex items-end p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+                  {project.href ? (
+                    <Link
+                      href={project.href}
+                      className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
+                    >
+                      View Case Study <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
+                  ) : (
+                    <span className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
+                      View Details <ExternalLink className="ml-2 h-4 w-4" />
+                    </span>
+                  )}
+                </div>
                 <Badge className="absolute right-4 top-4 bg-background/90 text-foreground">
                   {project.category}
                 </Badge>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="p-6">
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
                   <Badge variant="outline" className="text-xs">
@@ -278,39 +280,28 @@ export function Portfolio() {
                 </p>
 
                 {project.featured && (
-                  <div className="mt-4 space-y-3">
+                  <div className="space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                       Services Delivered:
                     </p>
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    <div className="flex flex-wrap gap-1">
                       {project.services.slice(0, 3).map((service) => (
-                        <div
-                          key={service}
-                          className="rounded-lg bg-secondary px-3 py-2 text-xs font-medium leading-snug text-secondary-foreground"
-                        >
-                          {service}
-                        </div>
+                        <Badge key={service} variant="secondary" className="text-xs">
+                          {service.length > 20 ? service.slice(0, 20) + "..." : service}
+                        </Badge>
                       ))}
                     </div>
 
                     {project.services.length > 3 && (
                       <details className="group/details">
-                        <summary className="inline-flex cursor-pointer list-none items-center rounded-md border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-                          <span className="group-open/details:hidden">
-                            View {project.services.length - 3} more services
-                          </span>
-                          <span className="hidden group-open/details:inline">
-                            Show fewer services
-                          </span>
+                        <summary className="mt-2 cursor-pointer list-none text-xs font-medium text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                          +{project.services.length - 3} more services
                         </summary>
-                        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                        <div className="mt-2 flex flex-wrap gap-1">
                           {project.services.slice(3).map((service) => (
-                            <div
-                              key={service}
-                              className="rounded-lg bg-secondary px-3 py-2 text-xs font-medium leading-snug text-secondary-foreground"
-                            >
-                              {service}
-                            </div>
+                            <Badge key={service} variant="secondary" className="text-xs">
+                              {service.length > 20 ? service.slice(0, 20) + "..." : service}
+                            </Badge>
                           ))}
                         </div>
                       </details>
