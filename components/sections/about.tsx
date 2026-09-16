@@ -39,7 +39,7 @@ const experience = [
 
 export function About({ image = "/images/herologo/ravindraimage.png" }: AboutProps): import("react/jsx-runtime").JSX.Element {
   return (
-    <section id="about" className="relative overflow-hidden bg-background py-24">
+    <section id="about" className="content-auto relative overflow-hidden bg-background py-24">
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-0 top-20 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
@@ -93,7 +93,7 @@ export function About({ image = "/images/herologo/ravindraimage.png" }: AboutPro
             className="space-y-8"
           >
             <div>
-              <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+              <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-[#8F2400]">
                 About The Founder
               </span>
               <h2 className="mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
