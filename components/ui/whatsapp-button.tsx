@@ -7,6 +7,7 @@ export function WhatsAppButton() {
   href="https://wa.me/917820942754"
   target="_blank"
   rel="noopener noreferrer"
+  aria-label="Chat with Shree Shyam Kitchen Consultancy on WhatsApp"
   className="group flex items-center gap-3"
 >
         {/* Tooltip */}
@@ -18,7 +19,7 @@ export function WhatsAppButton() {
 
         {/* Button */}
         <div
-          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40 active:scale-95"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#08775F] text-white shadow-lg shadow-[#08775F]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#08775F]/40 active:scale-95"
         >
           <svg
             viewBox="0 0 32 32"
