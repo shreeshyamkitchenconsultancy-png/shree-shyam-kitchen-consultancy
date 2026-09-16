@@ -208,6 +208,11 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
 @media print {
   .pizza-layout-card {
     break-inside: avoid;
