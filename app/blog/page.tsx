@@ -34,6 +34,20 @@ export default function BlogPage() {
           and Rajasthan. Topics focus on real setup decisions such as investment planning,
           kitchen workflow, food costing, staffing structure and launch readiness.
         </p>
+        <p>
+          You will also find guidance on choosing the right outlet format, estimating
+          setup costs, building an efficient back-of-house workflow, controlling recipe
+          and portion costs, planning manpower, and avoiding common pre-opening mistakes.
+          The objective is to help owners make better decisions before money is committed
+          to equipment, interiors, staffing or an oversized menu.
+        </p>
+        <p>
+          Shree Shyam Kitchen Consultancy works across cafes, restaurants, QSRs and
+          cloud kitchens, so the articles are structured around practical operator
+          problems rather than generic hospitality theory. Use these guides to understand
+          the planning process, compare options and prepare more effectively for a
+          profitable opening and stable day-to-day operations.
+        </p>
       </div>
 
       <div className="rounded-xl border overflow-hidden shadow-sm">
