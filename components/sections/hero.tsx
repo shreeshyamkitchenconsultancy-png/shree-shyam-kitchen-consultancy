@@ -82,7 +82,7 @@ export function Hero({
               >
               <Link href="#contact">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Book Free Consultation
+                  Start Free Consultation
                 </Link>
               </Button>
               <Button
@@ -99,7 +99,7 @@ export function Hero({
               <Button
                 asChild
                 size="lg"
-                className="bg-[#08775F] px-8 text-white shadow-lg transition-all hover:bg-[#075E54] hover:shadow-xl"
+                className="bg-[#075E54] px-8 text-white shadow-lg transition-all hover:bg-[#06483F] hover:shadow-xl"
               >
                 <Link href="https://wa.me/917820942754" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
