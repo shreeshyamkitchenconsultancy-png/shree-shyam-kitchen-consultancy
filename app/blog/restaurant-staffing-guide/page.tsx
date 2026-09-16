@@ -5,11 +5,18 @@ import { InfoBox } from "@/components/blog/InfoBox";
 import { CTABox } from "@/components/blog/sections/CTABox";
 
 export const metadata: Metadata = {
-  title:
-    "How Many Staff Does Your Restaurant Actually Need? | Staffing Guide Jaipur 2026",
+  title: "Restaurant Staffing Guide Jaipur 2026 | SSKC",
   description:
-    "A practical staffing model for restaurant owners, café operators and QSR founders in Jaipur. Learn how to control labour cost, eliminate overstaffing and build a role-based production system.",
+    "Practical restaurant staffing guide for Jaipur owners: role planning, labour-cost control, productivity, training and lean team structure.",
   alternates: { canonical: "/blog/restaurant-staffing-guide" },
+  openGraph: {
+    type: "article",
+    url: "https://shreeshyamkitchenconsultancy.com/blog/restaurant-staffing-guide",
+    title: "Restaurant Staffing Guide Jaipur 2026 | SSKC",
+    description:
+      "Practical restaurant staffing guide for Jaipur owners: role planning, labour-cost control, productivity, training and lean team structure.",
+    images: [{ url: "/images/blog/restaurantstaffing.png", alt: "Restaurant staffing guide Jaipur" }],
+  },
 };
 
 export default function ArticlePage() {
