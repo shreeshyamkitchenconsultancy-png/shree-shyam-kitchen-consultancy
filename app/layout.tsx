@@ -22,8 +22,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shreeshyamkitchenconsultancy.com"),
-  title: 'Restaurant Consultant Jaipur | Shree Shyam Kitchen Consultancy',
-  description: 'Chef-led restaurant consultancy in Jaipur for cafes, QSRs, cloud kitchens and restaurants: kitchen planning, menu, costing, recipes, training and launch support.',
+  title: 'Restaurant Consultant Jaipur | Shree Shyam Kitchen',
+  description: 'Chef-led restaurant consultancy in Jaipur for cafes, QSRs, cloud kitchens and restaurants: kitchen planning, menu, costing, training and launch support.',
   keywords: 'restaurant consultancy, restaurant consultant Jaipur, kitchen design consultancy, cloud kitchen setup, cafe consultancy, menu engineering, restaurant operations consultancy, hospitality consultancy India',
   authors: [{ name: 'Shree Shyam Kitchen Consultancy' }],
   creator: 'Shree Shyam Kitchen Consultancy',
