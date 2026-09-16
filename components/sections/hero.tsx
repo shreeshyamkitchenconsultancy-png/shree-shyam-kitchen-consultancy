@@ -56,6 +56,7 @@ export function Hero({
            {/* Headline */}
             <h1
               className="font-serif text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl"
+              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
             >
               <span className="text-balance">Transforming Restaurant Ideas Into</span>{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -98,7 +99,7 @@ export function Hero({
               <Button
                 asChild
                 size="lg"
-                className="bg-[#25D366] px-8 text-white shadow-lg transition-all hover:bg-[#128C7E] hover:shadow-xl"
+                className="bg-[#08775F] px-8 text-white shadow-lg transition-all hover:bg-[#075E54] hover:shadow-xl"
               >
                 <Link href="https://wa.me/917820942754" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
@@ -139,6 +140,7 @@ export function Hero({
   fill
   priority
   fetchPriority="high"
+  quality={70}
   sizes="(max-width: 768px) 100vw, 50vw"
   className="object-cover"
 />
@@ -155,6 +157,7 @@ export function Hero({
   src={heroSecondaryOne}
   alt="Hospitality kitchen planning visual"
   fill
+  quality={65}
   sizes="(max-width: 768px) 50vw, 25vw"
   className="object-cover"
 />
@@ -170,6 +173,7 @@ export function Hero({
   src={heroSecondaryTwo}
   alt="Restaurant interior design concept"
   fill
+  quality={65}
   sizes="(max-width: 768px) 50vw, 25vw"
   loading="lazy"
   className="object-cover"
