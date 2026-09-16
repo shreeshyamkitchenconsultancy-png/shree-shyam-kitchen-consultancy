@@ -5,6 +5,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    formats: ["image/avif", "image/webp"],
+    qualities: [60, 65, 70, 75],
+  },
+};
 
 export default withBundleAnalyzer(nextConfig);
