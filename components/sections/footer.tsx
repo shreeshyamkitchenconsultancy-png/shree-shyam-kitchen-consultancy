@@ -5,19 +5,18 @@ import {
   Mail, 
   MapPin, 
   Instagram, 
-  Facebook, 
   MessageCircle,
   Clock
 } from "lucide-react";
 import { ScrollToTopButton } from "@/components/ui/scroll-to-top-button";
 
 const quickLinks = [
-  { href: "#services", label: "Our Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Our Process" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Our Services" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#process", label: "Our Process" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 const services = [
@@ -31,7 +30,6 @@ const services = [
 
 const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/shreeshyamkitchenconsultancy?igsh=YTZnOWp2Nmp5ZmU4", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
   { icon: MessageCircle, href: "https://wa.me/917820942754", label: "WhatsApp" },
 ];
 
@@ -45,7 +43,7 @@ export function Footer() {
         >
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="#top" className="flex items-center gap-3">
+            <Link href="/#top" className="flex items-center gap-3">
   <div className="relative h-12 w-12 sm:h-16 sm:w-16 overflow-hidden rounded-xl flex-shrink-0">
     <Image
       src="/images/logos/sskclogo.png"
@@ -99,7 +97,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service}>
                   <Link
-                    href="#services"
+                    href="/#services"
                     className="text-background/70 transition-colors hover:text-primary"
                   >
                     {service}
