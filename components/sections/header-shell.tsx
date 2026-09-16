@@ -15,7 +15,7 @@ export function HeaderShell({ children }: { children: React.ReactNode }) {
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass border-b border-border/50 py-1 shadow-lg" : "bg-transparent py-2"
+        isScrolled ? "bg-background border-b border-border/50 py-1 shadow-lg" : "bg-transparent py-2"
       }`}
     >
       {children}
