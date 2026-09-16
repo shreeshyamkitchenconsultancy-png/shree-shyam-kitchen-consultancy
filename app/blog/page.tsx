@@ -23,10 +23,18 @@ export default function BlogPage() {
         Restaurant Consultancy Insights
       </h1>
 
-      <p className="text-lg text-muted-foreground mb-12">
-        Expert guides on restaurant setup, commercial kitchen design,
-        menu engineering, staff training, operations and profitability.
-      </p>
+      <div className="mb-12 max-w-4xl space-y-4 text-lg text-muted-foreground">
+        <p>
+          Expert guides on restaurant setup, commercial kitchen design,
+          menu engineering, staff training, operations and profitability.
+        </p>
+        <p>
+          These practical resources are written for cafe owners, restaurant founders,
+          QSR operators and cloud-kitchen entrepreneurs planning new outlets in Jaipur
+          and Rajasthan. Topics focus on real setup decisions such as investment planning,
+          kitchen workflow, food costing, staffing structure and launch readiness.
+        </p>
+      </div>
 
       <div className="rounded-xl border overflow-hidden shadow-sm">
         <div className="relative h-64 w-full">
